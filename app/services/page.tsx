@@ -1,0 +1,465 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Faq from "@/components/Faq";
+import {
+  GoogleAdsLogo,
+  GoogleTagManagerLogo,
+  LayoutIcon,
+  ShopifyLogo,
+  WordPressLogo,
+} from "@/components/icons";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Google Ads management plus full conversion tracking across every ad platform you run, including Enhanced Conversions, Meta and TikTok Conversions API, and server-side tagging.",
+  alternates: { canonical: "/services/" },
+};
+
+const campaignItems = [
+  {
+    label: "Account Structure",
+    description:
+      "Organized by service line and location, not one broad catch-all campaign competing against itself.",
+  },
+  {
+    label: "Keywords & Ad Creative",
+    description:
+      "Built around what your customers actually search, with copy written to match the exact offer on the landing page it leads to.",
+  },
+  {
+    label: "Local Services Ads",
+    description:
+      "Set up and Google Guaranteed-verified where it fits your trade, since LSA leads often close faster than Search alone.",
+  },
+  {
+    label: "Bid & Budget Optimization",
+    description:
+      "Performance Max and Search bids adjusted against actual booked jobs, not just platform-reported conversions.",
+  },
+  {
+    label: "Monthly Reporting",
+    description: "One page, plain language: what was spent, what closed, and what changes next.",
+  },
+];
+
+const trackingItems = [
+  {
+    label: "Google Tag & GA4 Setup",
+    description: "Every meaningful action on your site turned into a real, trackable event.",
+  },
+  {
+    label: "Enhanced Conversions",
+    description: "GCLID paired with hashed contact data, so match rates hold up as browsers restrict cookies.",
+  },
+  {
+    label: "Cross-Platform Tracking",
+    description: "Meta Pixel and Conversions API implemented with event deduplication, even on accounts we don't manage.",
+  },
+  {
+    label: "Server-Side Tagging",
+    description: "A server GTM container for accounts with real spend, recovering conversions ad blockers would otherwise hide.",
+  },
+  {
+    label: "Offline Conversion Imports",
+    description: "A phone call or in-person sale still counts, fed back to the ad platform once it closes.",
+  },
+];
+
+const landingPageItems = [
+  {
+    label: "Message Match",
+    description: "Headline and hero copy tied to the exact ad group the click came from, not one homepage for every campaign.",
+  },
+  {
+    label: "Core Web Vitals",
+    description: "Checked against real mobile field data, since that's what actually moves Quality Score and conversion rate.",
+  },
+  {
+    label: "One Clear Action",
+    description: "A single call to action per screen, so no visitor has to choose between two competing offers.",
+  },
+  {
+    label: "Mobile Usability",
+    description: "Tap targets, forms, and the booking widget tested on an actual phone, not a resized browser window.",
+  },
+  {
+    label: "Script Cleanup",
+    description: "Chat widgets and extra tracking snippets audited and deferred so they don't slow down the page the ad paid for.",
+  },
+];
+
+const industries = [
+  {
+    name: "HVAC, Plumbing, and Home Services",
+    level: "High competition",
+    description:
+      "High-value emergency and installation leads where cost per lead often runs from twenty to ninety dollars depending on trade and market, and where Local Services Ads plus a tightly geo-targeted Search campaign outperform broad automation.",
+  },
+  {
+    name: "Personal Injury and Family Law",
+    level: "High competition",
+    description:
+      "Some of the highest cost-per-click keywords in Google Ads, where tracking accuracy on phone call conversions is the difference between a profitable account and a wasted budget.",
+  },
+  {
+    name: "Medical Aesthetics and Cosmetic Dentistry",
+    level: "High competition",
+    description:
+      "High transaction values and a booking-driven funnel, where conversion tracking has to bridge an online form to an in-clinic consultation.",
+  },
+  {
+    name: "Immigration and Family Law",
+    level: "Lower competition",
+    description:
+      "Meaningfully lower cost-per-click than personal injury law while still carrying strong lifetime client value, and most firms in this category still have no conversion tracking beyond a bare contact form.",
+  },
+  {
+    name: "B2B Professional and Managed Services",
+    level: "Lower competition",
+    description:
+      "Bookkeeping, IT support, and commercial cleaning contracts see low ad competition and long sales cycles that almost always require offline conversion tracking to prove ROI, and very few competing agencies understand how to connect a CRM-closed deal back to the ad click that started it.",
+  },
+];
+
+const automationTools = [
+  {
+    name: "Zapier",
+    description:
+      "The fastest setup and the simplest CRM triggers, with direct native support for Google Ads offline conversion import and Meta Conversions API. Best fit for straightforward \"deal marked Closed Won\" triggers with no custom logic required.",
+  },
+  {
+    name: "Make.com",
+    description:
+      "Used when the automation needs more control, particularly for Meta's Conversions API, since Make's Facebook module supports the click ID, pixel cookie, and test event code fields that simpler modules leave out, meaning better match rates on Meta specifically.",
+  },
+  {
+    name: "n8n",
+    description:
+      "Used when the client wants a self-hosted, fully custom pipeline with custom JavaScript steps and no per-operation cost ceiling, the right choice for high lead volume where operation-based pricing would get expensive.",
+  },
+];
+
+const crmPlatforms = [
+  "HubSpot",
+  "Zoho CRM",
+  "Pipedrive",
+  "Salesforce",
+  "GoHighLevel",
+  "Bitrix24",
+  "Odoo",
+];
+
+const onSitePlatforms = [
+  {
+    name: "Custom-built websites (React, Next.js, Node.js)",
+    description:
+      "The same stack this site itself uses. We implement server-side tagging directly via a dedicated server GTM container, most commonly hosted on Stape.io, since it is more affordable and far less operationally heavy than self-hosting a server container on AWS or Google Cloud.",
+  },
+  {
+    name: "Shopify",
+    description:
+      "Using Stape's Conversion Tracking app to route Shopify's native Web Pixels events through a server GTM container instead of firing tags directly from the browser, recovering conversions otherwise lost to ad blockers and Safari or iOS tracking prevention. Shopify retired the old checkout.liquid and Additional Scripts tracking method, so Web Pixels is now the only supported path on every plan tier.",
+  },
+  {
+    name: "WordPress",
+    description:
+      "Using the Stape GTM Server Side plugin, which also works alongside WooCommerce, to install the web GTM snippet, add a loader more resistant to ad blockers, and forward data layer events to the server container without custom code.",
+  },
+  {
+    name: "Webflow, Wix, Squarespace, and similar page builders",
+    description:
+      "Server-side tracking is implemented through a hosted server GTM container, with the web container's tag injected via the platform's native custom-code or tracking-integration field.",
+  },
+];
+
+const comparisonRows = [
+  {
+    them: "Installs a pixel and calls tracking done",
+    us: "Verifies Enhanced Conversions and Conversions API events actually match, not just fire",
+  },
+  {
+    them: "Reports on clicks and impressions",
+    us: "Reports on cost per booked job and closed revenue",
+  },
+  {
+    them: "Ignores offline sales entirely",
+    us: "Builds a CRM-to-ad-platform pipeline so closed deals feed back into bidding",
+  },
+  {
+    them: "One generic setup for every client",
+    us: "Tracking method matched to the client's actual website platform and CRM",
+  },
+  {
+    them: "Disappears after the pixel is installed",
+    us: "Audits the account on a set cadence using named, documented tools",
+  },
+];
+
+const faqItems = [
+  {
+    question: "Do you manage Meta Ads campaigns?",
+    answer:
+      "No, we manage Google Ads exclusively. Our conversion tracking service is platform-agnostic, so if you also run Meta, TikTok, or Pinterest ads, we can still build and maintain accurate tracking on those accounts even though we don't manage the campaigns themselves.",
+  },
+  {
+    question: "What counts as a tracking audit checklist item?",
+    answer:
+      "A tracking audit checks whether an account is double-counting conversions, whether Enhanced Conversions is actually verified and not just switched on, and whether conversion values are real numbers instead of a flat placeholder value, since all three are common, silent causes of wasted ad spend.",
+  },
+  {
+    question: "When does server-side tagging make sense?",
+    answer:
+      "Server-side tagging through a tool such as Stape.io makes sense once an account is spending enough that a meaningful share of conversions would otherwise be lost to browser tracking prevention or ad blockers, since the setup and hosting cost only pays for itself above a certain monthly spend threshold.",
+  },
+  {
+    question: "Can offline sales really be tracked back to a specific ad click?",
+    answer:
+      "Yes: capturing the GCLID or fbclid at first contact and storing it on the CRM lead record lets an automation tool push the closed-deal event back to Google's Enhanced Conversions for Leads and Meta's Conversions API once the deal is marked won, closing the loop between an offline sale and the ad click that started it.",
+  },
+  {
+    question: "What is included in the free 30-minute audit?",
+    answer:
+      "The audit reviews current campaign structure, whether conversion tracking is accurate or double-counting, whether Enhanced Conversions and offline imports are actually verified, and gives a written summary of the top issues found, all before any commitment to work together.",
+  },
+  {
+    question: "Do I need to give account access before the free audit?",
+    answer:
+      "Read-only access to the Google Ads account and, where relevant, GA4 and the site's tag manager container, is the minimum needed to review tracking and campaign structure properly. Nothing is changed in the account during the audit itself.",
+  },
+  {
+    question: "Is there a contract or can I cancel anytime?",
+    answer:
+      "The engagement is month-to-month with no long-term contract, so continuing is based on the monthly report showing it is working, not a fixed-term commitment.",
+  },
+  {
+    question: "How is Google Ads management different from just installing a pixel and running ads?",
+    answer:
+      "Installing a pixel and turning campaigns on gets an account live, but it does not verify that Enhanced Conversions is matching correctly, that GA4 and Google Ads are not double-counting the same event, or that offline sales ever make it back to the platform, and all three commonly cause Smart Bidding to optimize against incomplete or wrong data.",
+  },
+  {
+    question: "Do you work with businesses outside the UK, US, and Canada?",
+    answer:
+      "Campaign management and reporting are scheduled around UK, US, and Canada time zones, so those are the markets served directly, though conversion tracking implementation itself is not tied to a specific region.",
+  },
+];
+
+export default function ServicesPage() {
+  return (
+    <>
+      <section className="section pt-12 pb-8">
+        <div className="content-wrap px-6">
+          <h1 className="h1-style max-w-[20ch]">
+            Campaign Management and Conversion Tracking, Built Together
+          </h1>
+          <p className="body-lg-copy text-neutral max-w-prose mt-4">
+            Running ads and tracking what they produce are not two separate
+            jobs. We handle both, so every dollar of spend can be traced to
+            whether it produced a real, closed sale.
+          </p>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="content-wrap px-6 grid md:grid-cols-3 gap-6 items-start">
+          <div id="google-ads-management" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#4285F4" }}>
+                  <GoogleAdsLogo className="w-5 h-5" />
+                </span>
+              </span>
+              <h2 className="h3-style">Google Ads Management</h2>
+            </div>
+            <p className="body-copy text-neutral">
+              We run your Search and Local Services Ads campaigns end to end,
+              from structure to daily bid decisions.
+            </p>
+            <ul className="flex flex-col gap-4">
+              {campaignItems.map((item) => (
+                <li key={item.label} className="border-l-2 border-accent/25 pl-3">
+                  <p className="font-semibold text-ink text-[15px]">{item.label}</p>
+                  <p className="body-copy text-neutral">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="caption-copy border-t border-border pt-4 mt-1">
+              We manage Google Ads directly. If you also run Meta, TikTok, or
+              Pinterest ads, our conversion tracking service covers those
+              platforms too, even though we don&apos;t manage those campaigns.
+            </p>
+          </div>
+
+          <div id="conversion-tracking" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white border border-border shrink-0">
+                <span className="flex" style={{ color: "#246FDB" }}>
+                  <GoogleTagManagerLogo className="w-5 h-5" />
+                </span>
+              </span>
+              <h2 className="h3-style">Conversion Tracking</h2>
+            </div>
+            <p className="body-copy text-neutral">
+              Every real action on your site or account, online or offline,
+              built into an event your ad platform can actually bid on.
+            </p>
+            <ul className="flex flex-col gap-4">
+              {trackingItems.map((item) => (
+                <li key={item.label} className="border-l-2 border-accent/25 pl-3">
+                  <p className="font-semibold text-ink text-[15px]">{item.label}</p>
+                  <p className="body-copy text-neutral">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div id="landing-pages" className="scroll-mt-24 bg-white rounded-2xl border border-border p-8 flex flex-col gap-5">
+            <div className="flex items-center gap-3">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
+                <LayoutIcon className="w-5 h-5" />
+              </span>
+              <h2 className="h3-style">Landing Page Optimization</h2>
+            </div>
+            <p className="body-copy text-neutral">
+              The page your ad sends traffic to gets checked with the same
+              rigor as the campaign that leads to it.
+            </p>
+            <ul className="flex flex-col gap-4">
+              {landingPageItems.map((item) => (
+                <li key={item.label} className="border-l-2 border-accent/25 pl-3">
+                  <p className="font-semibold text-ink text-[15px]">{item.label}</p>
+                  <p className="body-copy text-neutral">{item.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="content-wrap px-6">
+          <h2 className="h2-style mb-3">Platforms and Integrations</h2>
+          <p className="body-lg-copy text-neutral max-w-prose mb-10">
+            Whatever platform your website runs on, the tracking method
+            changes, the underlying goal does not: get real conversion data
+            to the ad platform accurately, without slowing your site down.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="h3-style mb-3">Offline conversion automation</h3>
+              <p className="body-copy text-neutral mb-5">
+                When a lead closes offline, whether that is a signed
+                contract, a completed phone consultation, or a paid invoice,
+                that event needs to travel from wherever it lives back into
+                Google Ads and Meta so the bidding algorithm can learn from
+                real revenue instead of just form fills. We build this
+                pipeline using whichever automation tool fits the client&apos;s
+                technical setup and budget.
+              </p>
+              <div className="flex flex-col gap-4 mb-6">
+                {automationTools.map((tool) => (
+                  <div key={tool.name}>
+                    <p className="font-semibold text-ink">{tool.name}</p>
+                    <p className="body-copy text-neutral">{tool.description}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="font-semibold text-ink mb-2">
+                CRM platforms we connect for offline conversion tracking
+              </p>
+              <p className="body-copy text-neutral">{crmPlatforms.join(", ")}.</p>
+            </div>
+
+            <div>
+              <h3 className="h3-style mb-3">Where we track online</h3>
+              <div className="flex flex-col gap-5">
+                {onSitePlatforms.map((platform) => {
+                  const Logo = platform.name.startsWith("Shopify")
+                    ? ShopifyLogo
+                    : platform.name.startsWith("WordPress")
+                      ? WordPressLogo
+                      : null;
+                  const logoColor = platform.name.startsWith("Shopify") ? "#7AB55C" : "#21759B";
+                  return (
+                    <div key={platform.name} className="flex gap-3">
+                      {Logo && (
+                        <span
+                          className="flex items-center justify-center w-8 h-8 rounded-lg bg-white border border-border shrink-0 mt-0.5"
+                          style={{ color: logoColor }}
+                        >
+                          <Logo className="w-4 h-4" />
+                        </span>
+                      )}
+                      <div>
+                        <p className="font-semibold text-ink">{platform.name}</p>
+                        <p className="body-copy text-neutral">{platform.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="content-wrap px-6">
+          <h2 className="h2-style mb-10">Industries We Specialize In</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {industries.map((industry) => (
+              <div key={industry.name} className="bg-white rounded-2xl border border-border p-6 flex flex-col gap-2">
+                <span className="caption-copy text-accent">{industry.level}</span>
+                <h3 className="h3-style">{industry.name}</h3>
+                <p className="body-copy text-neutral">{industry.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
+        <div className="content-wrap px-6">
+          <h2 className="h2-style mb-10">What Most Agencies Do vs What We Do</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse min-w-[560px]">
+              <thead>
+                <tr className="text-left border-b border-border">
+                  <th className="py-3 pr-6 caption-copy uppercase">What most agencies do</th>
+                  <th className="py-3 caption-copy uppercase">What we do</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row) => (
+                  <tr key={row.them} className="border-b border-border">
+                    <td className="py-4 pr-6 body-copy text-neutral align-top">{row.them}</td>
+                    <td className="py-4 body-copy align-top">{row.us}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="content-wrap px-6 max-w-[860px]">
+          <h2 className="h2-style text-center mb-10">Common Questions</h2>
+          <Faq items={faqItems} />
+        </div>
+      </section>
+
+      <section className="section bg-ink">
+        <div className="content-wrap px-6 text-center flex flex-col items-center gap-5">
+          <h2 className="h2-style !text-white max-w-[22ch]">
+            Get a Free 30-Minute Audit of Your Ad Account
+          </h2>
+          <Link href="/book-a-call/" className="btn-primary bg-accent">
+            Book Your Free 30-Minute Audit
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
