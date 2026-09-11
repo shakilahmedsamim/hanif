@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdAuctionDiagram from "@/components/AdAuctionDiagram";
 import CaseStudyCard from "@/components/CaseStudyCard";
-import DataFlowDiagram from "@/components/DataFlowDiagram";
 import Faq from "@/components/Faq";
 import FinalCtaForm from "@/components/FinalCtaForm";
 import FounderVideo from "@/components/FounderVideo";
@@ -311,23 +310,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="section bg-white">
-        <div className="content-wrap px-6">
-          <div className="max-w-[620px] mx-auto text-center mb-12">
-            <p className="caption-copy uppercase tracking-wider text-accent mb-3">
-              Under the Hood
-            </p>
-            <h2 className="h2-style mb-3">Where Your Data Actually Goes</h2>
-            <p className="body-copy text-neutral">
-              Whatever platform your site or CRM runs on, events are routed
-              through server-side tagging before they reach any ad platform,
-              so tracking survives ad blockers and browser privacy limits.
-            </p>
-          </div>
-          <DataFlowDiagram />
         </div>
       </section>
 
