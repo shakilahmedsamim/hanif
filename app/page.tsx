@@ -216,14 +216,15 @@ export default function HomePage() {
             </div>
 
             <h1 className="h1-style">
-              Know Exactly Which Ads Turn Into{" "}
-              <span className="text-accent">Paying Customers.</span>
+              Build A Google Ads Strategy That Brings{" "}
+              <span className="text-accent">More Customers</span> And Drives
+              Sustainable Business Growth
             </h1>
 
             <p className="body-lg-copy text-neutral">
-              We manage your Google Ads and build the tracking behind them,
-              so every dollar of spend can be traced back to a real, closed
-              sale, not just a click.
+              I handle the strategy, targeting, keywords, ads, optimization,
+              and tracking so your business can attract more high-intent
+              customers from Google.
             </p>
 
             <div className="flex flex-col gap-3">
