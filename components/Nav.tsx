@@ -60,7 +60,13 @@ export default function Nav() {
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) =>
             link.label === "Services" ? (
-              <div key={link.href} ref={servicesRef} className="relative">
+              <div
+                key={link.href}
+                ref={servicesRef}
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
                 <button
                   type="button"
                   onClick={() => setServicesOpen((v) => !v)}
