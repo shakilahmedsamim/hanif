@@ -9,7 +9,6 @@ import {
   ShopifyLogo,
   TikTokLogo,
   WooCommerceLogo,
-  WordPressLogo,
 } from "./icons";
 
 const VIEW_W = 1000;
@@ -22,7 +21,7 @@ const BOTTOM_Y = 440;
 const sourceNodes = [
   { Icon: GlobeIcon, label: "Website", color: "#1A73E8" },
   { Icon: ShopifyLogo, label: "Shopify", color: "#7AB55C" },
-  { Icon: WordPressLogo, label: "WordPress", color: "#21759B" },
+  { Icon: GlobeIcon, label: "WordPress", color: "#21759B" },
   { Icon: WooCommerceLogo, label: "WooCommerce", color: "#96588A" },
   { Icon: HubSpotLogo, label: "CRM", color: "#FF7A59" },
 ];
