@@ -75,8 +75,8 @@ export default function ContactForm() {
 
       <div className="form-field">
         <label htmlFor="ad_platform">Are you currently running Google Ads?</label>
-        <select id="ad_platform" name="ad_platform" className="form-input">
-          <option>Yes, already running Google Ads</option>
+        <select id="ad_platform" name="ad_platform" className="form-input pr-8 text-ellipsis">
+          <option>Yes, running Google Ads</option>
           <option>No, not yet</option>
           <option>Not sure</option>
         </select>

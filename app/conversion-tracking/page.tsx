@@ -117,17 +117,17 @@ export default function ConversionTrackingPage() {
           </div>
 
           <div className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-4">
-            <div className="rounded-xl bg-accent/5 border border-accent/20 p-5 flex items-center gap-4">
+            <div className="rounded-xl bg-accent/5 border border-accent/20 p-5 flex flex-wrap items-center gap-4">
               <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-border shrink-0">
                 <span className="flex" style={{ color: "#4285F4" }}>
                   <GoogleAdsLogo className="w-6 h-6" />
                 </span>
               </span>
-              <div>
-                <p className="font-semibold text-ink">Google Ads</p>
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-ink whitespace-nowrap">Google Ads</p>
                 <p className="caption-copy">Online + offline, verified first</p>
               </div>
-              <span className="caption-copy px-2.5 py-1 rounded-full bg-accent text-white ml-auto shrink-0">
+              <span className="caption-copy px-2.5 py-1 rounded-full bg-accent text-white shrink-0 basis-full text-center sm:basis-auto sm:ml-auto">
                 Priority 1
               </span>
             </div>
@@ -136,17 +136,17 @@ export default function ConversionTrackingPage() {
               <ArrowRightIcon className="w-4 h-4 text-neutral rotate-90" />
             </div>
 
-            <div className="rounded-xl bg-background border border-border p-5 flex items-center gap-4">
+            <div className="rounded-xl bg-background border border-border p-5 flex flex-wrap items-center gap-4">
               <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-border shrink-0">
                 <span className="flex" style={{ color: "#0467DF" }}>
                   <MetaLogo className="w-5 h-5" />
                 </span>
               </span>
-              <div>
-                <p className="font-semibold text-ink text-[15px]">Meta CAPI</p>
+              <div className="min-w-0 flex-1">
+                <p className="font-semibold text-ink text-[15px] whitespace-nowrap">Meta CAPI</p>
                 <p className="caption-copy">Server-side, layered on top</p>
               </div>
-              <span className="caption-copy px-2.5 py-1 rounded-full bg-white border border-border ml-auto shrink-0">
+              <span className="caption-copy px-2.5 py-1 rounded-full bg-white border border-border shrink-0 basis-full text-center sm:basis-auto sm:ml-auto">
                 Priority 2
               </span>
             </div>

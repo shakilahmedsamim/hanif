@@ -40,10 +40,10 @@ export default function CoreWebVitalsGauge() {
 
   return (
     <div ref={containerRef} className="flex flex-col gap-8">
-      <div className="grid grid-cols-3 gap-4 md:gap-8">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8">
         {metrics.map((metric, i) => (
-          <div key={metric.key} className="flex flex-col items-center gap-3">
-            <div className="relative w-[104px] h-[104px] md:w-[128px] md:h-[128px]">
+          <div key={metric.key} className="flex flex-col items-center gap-3 min-w-0">
+            <div className="relative w-[76px] h-[76px] sm:w-[104px] sm:h-[104px] md:w-[128px] md:h-[128px]">
               <svg viewBox="0 0 104 104" className="w-full h-full -rotate-90">
                 <circle
                   cx="52"
@@ -71,17 +71,19 @@ export default function CoreWebVitalsGauge() {
                   }}
                 />
               </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-[20px] md:text-[24px] font-semibold text-ink">
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-1">
+                <span className="text-[14px] sm:text-[20px] md:text-[24px] font-semibold text-ink leading-tight">
                   {metric.value}
                   {metric.unit}
                 </span>
-                <span className="caption-copy text-success">Good</span>
+                <span className="text-[10px] sm:text-caption text-success">Good</span>
               </div>
             </div>
-            <div className="text-center">
-              <p className="font-semibold text-ink text-[14px]">{metric.key}</p>
-              <p className="caption-copy max-w-[16ch] mx-auto">{metric.label}</p>
+            <div className="text-center px-0.5">
+              <p className="font-semibold text-ink text-[13px] sm:text-[14px]">{metric.key}</p>
+              <p className="text-[10px] sm:text-caption text-neutral leading-tight sm:max-w-[16ch] sm:mx-auto">
+                {metric.label}
+              </p>
             </div>
           </div>
         ))}
