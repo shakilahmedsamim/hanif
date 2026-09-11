@@ -35,10 +35,11 @@ const faqItems = [
 ];
 
 const whatIDo = [
-  "Set up and manage Google Ads accounts so tracking is correct before the first dollar is spent",
-  "Diagnose and fix broken conversion tracking on existing accounts, so fewer leads get miscounted or lost",
-  "Build offline conversion pipelines so a closed deal that started on a phone call still counts as a real conversion",
-  "Report on cost per lead and cost per booked job in plain numbers, not platform-generated vanity metrics",
+  "Build and manage Google Ads campaigns focused on generating qualified leads, customers, and measurable business growth",
+  "Research high-intent keywords, create compelling ads, and continuously optimize campaigns to reduce wasted ad spend",
+  "Set up accurate conversion tracking with Google Ads, GA4, and GTM so every important lead and sale can be measured",
+  "Analyze campaign performance and optimize bids, targeting, search terms, and budgets to improve conversions and ROI",
+  "Connect online and offline conversion data when needed, so Google Ads can optimize toward real customers, not just clicks or form submissions",
 ];
 
 export default function AboutPage() {
@@ -91,13 +92,16 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3">
               <h2 className="h2-style">What This Means for You</h2>
               <p className="body-lg-copy text-neutral">
-                Working with a specialist instead of a generalist marketing
-                agency means faster diagnosis when tracking breaks, because
-                identifying a broken pixel or a missing enhanced conversion
-                is the specific thing I do every week, not an occasional task
-                inside a broader retainer. It also means no learning curve on
-                your account and no account manager standing between you and
-                the person actually making changes.
+                You get more than someone who simply manages your Google Ads
+                account. I focus on the complete journey&mdash;from the
+                search that brings a potential customer to your business to
+                the conversion that generates real value. With accurate
+                tracking and continuous optimization, you&rsquo;ll have a
+                clearer understanding of where your ad budget is going,
+                what&rsquo;s generating results, and where opportunities
+                exist to improve performance. The goal is simple: less
+                wasted spend, more qualified leads, and better returns from
+                Google Ads.
               </p>
             </div>
 
