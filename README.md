@@ -1,4 +1,4 @@
-# Tracking Guru — Marketing Site
+# PPC HANIF — Marketing Site
 
 Five-page Next.js (App Router) marketing site for a Google Ads management
 and cross-platform conversion tracking agency serving clients in the UK,
@@ -48,7 +48,7 @@ npm run build
 - Real client logos / a current Google Partner badge
 - YouTube video ID for the homepage founder video (replace `VIDEO_ID` in
   `app/page.tsx`)
-- Final business name/branding to replace the "Tracking Guru" working name
+- Final business name/branding to replace the "PPC HANIF" working name
   in `lib/site.ts`
 
 ## Tracking (Section 5 of the build brief)

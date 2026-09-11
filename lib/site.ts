@@ -1,8 +1,8 @@
 export const site = {
-  name: "Tracking Guru",
+  name: "PPC HANIF",
   tagline: "Google Ads Management With Conversion Tracking That Proves Every Sale",
-  url: "https://www.trackingguru.example",
-  email: "hello@trackingguru.example",
+  url: "https://www.ppchanif.example",
+  email: "hello@ppchanif.example",
   whatsappNumber: "8801780641343",
   whatsappUrl: "https://wa.me/8801780641343",
   calendlyUrl: "https://calendly.com/shakilahmedsamims/30min?hide_gdpr_banner=1",
