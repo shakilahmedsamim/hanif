@@ -42,6 +42,10 @@ const auditAreas = [
     title: "Bidding, Budget & Optimization",
     body: "I evaluate your bidding strategy, budget allocation, and campaign performance to find opportunities to reduce wasted spend and improve efficiency.",
   },
+  {
+    title: "Landing Page Experience",
+    body: "I review your landing pages for message match, relevance, user experience, and conversion opportunities to make sure visitors find what they expected and have a clear path to becoming a lead or customer.",
+  },
 ];
 
 const faqItems = [
@@ -109,7 +113,7 @@ export default function GoogleAdsAuditPage() {
               conversion performance, and your overall return on ad spend.
             </p>
 
-            <p className="font-semibold text-ink mt-2">5 Things I Check</p>
+            <p className="font-semibold text-ink mt-2">6 Things I Check</p>
 
             <div className="flex flex-col gap-5">
               {auditAreas.map((area, i) => (
