@@ -7,25 +7,10 @@ import WhatsAppLink from "./WhatsAppLink";
 import { ChevronDownIcon, CloseIcon, MailIcon, MenuIcon, WhatsAppIcon } from "./icons";
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const servicesRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        setScrolled(window.scrollY > 40);
-        ticking = false;
-      });
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -47,14 +32,22 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 w-full bg-gradient-to-b from-accent to-[#174EA6] shadow-[0_1px_0_rgba(255,255,255,0.15)_inset,0_8px_24px_-8px_rgba(15,50,120,0.45)]">
       <div className="content-wrap flex items-center justify-between px-6 h-16">
-        <Link
-          href="/"
-          className={`relative flex items-start justify-center bg-white pt-3 pb-6 px-6 transition-transform duration-300 ease-out drop-shadow-[0_6px_10px_rgba(0,0,0,0.18)] ${
-            scrolled ? "translate-y-0" : "translate-y-3"
-          }`}
-          style={{ clipPath: "polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%)" }}
-        >
-          <span className="text-[17px] font-semibold text-ink whitespace-nowrap">{site.name}</span>
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+          <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-white shadow-sm shrink-0">
+            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" aria-hidden="true">
+              <path
+                d="M4 15 L9 9 L13 12.5 L20 5"
+                stroke="#1A73E8"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="20" cy="5" r="2" fill="#1A73E8" />
+            </svg>
+          </span>
+          <span className="text-[18px] font-bold text-white tracking-tight whitespace-nowrap">
+            {site.name}
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
