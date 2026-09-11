@@ -45,7 +45,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-b from-accent to-[#174EA6] shadow-md">
+    <header className="sticky top-0 z-50 w-full bg-gradient-to-b from-accent to-[#174EA6] shadow-[0_1px_0_rgba(255,255,255,0.15)_inset,0_8px_24px_-8px_rgba(15,50,120,0.45)]">
       <div className="content-wrap flex items-center justify-between px-6 h-16">
         <Link
           href="/"

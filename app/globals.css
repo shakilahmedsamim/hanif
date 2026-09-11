@@ -9,7 +9,31 @@ html {
 
 body {
   background-color: #FAFAFA;
+  background-image:
+    radial-gradient(560px circle at 8% -10%, rgba(26, 115, 232, 0.10), transparent 60%),
+    radial-gradient(480px circle at 100% 0%, rgba(26, 115, 232, 0.07), transparent 55%);
+  background-repeat: no-repeat;
   color: #1D1D1F;
+}
+
+/* Premium card treatment: applies to every element that already uses the
+   site's card signature (rounded-2xl + bg-white + border-border), so every
+   card, stat tile, and panel gets a consistent elevated look and hover lift
+   without editing each page individually. */
+.rounded-2xl.bg-white.border-border {
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 28px -14px rgba(16, 24, 40, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rounded-2xl.bg-white.border-border:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(16, 24, 40, 0.05), 0 24px 40px -16px rgba(26, 115, 232, 0.25);
+}
+
+/* Same treatment, lighter touch, for the pill badges (rounded-full) that
+   share the white/bordered look — eyebrow labels, trust badges, etc. */
+.rounded-full.bg-white.border-border {
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 6px 16px -8px rgba(16, 24, 40, 0.14);
 }
 
 @layer components {
@@ -22,11 +46,11 @@ body {
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-btn bg-accent px-6 py-3.5 text-white font-medium text-[17px] transition-transform duration-150 ease-out hover:scale-[1.02] active:scale-[0.99] min-h-[44px];
+    @apply inline-flex items-center justify-center rounded-btn bg-gradient-to-b from-accent to-accent-dark px-6 py-3.5 text-white font-semibold text-[17px] shadow-[0_1px_1px_rgba(255,255,255,0.25)_inset,0_10px_24px_-8px_rgba(26,115,232,0.55)] transition-all duration-200 ease-out hover:shadow-[0_1px_1px_rgba(255,255,255,0.25)_inset,0_16px_32px_-8px_rgba(26,115,232,0.65)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] min-h-[44px];
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-btn border-2 border-accent px-6 py-3.5 text-accent font-medium text-[17px] bg-transparent transition-transform duration-150 ease-out hover:scale-[1.02] min-h-[44px];
+    @apply inline-flex items-center justify-center rounded-btn border-2 border-accent px-6 py-3.5 text-accent font-semibold text-[17px] bg-transparent transition-all duration-200 ease-out hover:bg-accent hover:text-white hover:-translate-y-0.5 active:translate-y-0 min-h-[44px];
   }
 
   .h1-style {

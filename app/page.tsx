@@ -195,8 +195,16 @@ const objectionFaqItems = [
 export default function HomePage() {
   return (
     <>
-      <section className="section pt-10 md:pt-16">
-        <div className="content-wrap grid md:grid-cols-2 gap-10 items-center">
+      <section className="relative section pt-10 md:pt-16 overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 -right-40 w-[560px] h-[560px] rounded-full bg-accent/20 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-accent/10 blur-3xl"
+        />
+        <div className="relative content-wrap grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">
               <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border">
