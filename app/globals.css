@@ -54,15 +54,15 @@ body {
   }
 
   .h1-style {
-    @apply text-hero-mobile md:text-hero-desktop text-ink;
+    @apply text-hero-mobile md:text-hero-desktop text-ink font-heading font-extrabold tracking-tight;
   }
 
   .h2-style {
-    @apply text-h2-mobile md:text-h2-desktop text-ink;
+    @apply text-h2-mobile md:text-h2-desktop text-ink font-heading font-extrabold tracking-tight;
   }
 
   .h3-style {
-    @apply text-h3-mobile md:text-h3-desktop text-ink;
+    @apply text-h3-mobile md:text-h3-desktop text-ink font-heading font-bold tracking-tight;
   }
 
   .body-copy {

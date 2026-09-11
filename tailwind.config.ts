@@ -27,6 +27,7 @@ const config: Config = {
           "Arial",
           "sans-serif",
         ],
+        heading: ["var(--font-heading)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       fontSize: {
         "hero-desktop": ["56px", { lineHeight: "1.4", fontWeight: "600" }],

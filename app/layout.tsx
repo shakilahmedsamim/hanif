@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -36,6 +37,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -50,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={jakarta.variable}>
       <body className="font-sans bg-background text-ink antialiased">
         <script
           type="application/ld+json"
