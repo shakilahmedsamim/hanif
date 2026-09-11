@@ -244,22 +244,6 @@ export default function HomePage() {
                 No payment required, and no pressure to sign anything after.
               </p>
             </div>
-
-            <div className="flex flex-wrap gap-2.5">
-              {[
-                "One Platform, Full Attention",
-                "Tracking Verified Before You Scale",
-                "Message Me Directly, No Ticket Queue",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#FDF6F0] border border-[#F0E4D8] px-3.5 py-2 text-[14px] font-semibold text-ink"
-                >
-                  <ShieldCheckIcon className="w-4 h-4 text-success shrink-0" />
-                  {item}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="flex flex-col gap-4">
