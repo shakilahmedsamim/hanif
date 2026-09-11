@@ -87,13 +87,13 @@ const differentiators = [
       "You reach the person actually making changes to your account over WhatsApp or email, not a support rotation.",
   },
   {
-    logos: [{ Logo: BarChartIcon, color: "#0066FF" }],
+    logos: [{ Logo: BarChartIcon, color: "#1A73E8" }],
     title: "Reporting You Can Actually Read",
     description:
       "One page: what was spent, what closed, and what changes next. Not a forty-metric export nobody reads.",
   },
   {
-    logos: [{ Logo: ShieldIcon, color: "#0066FF" }],
+    logos: [{ Logo: ShieldIcon, color: "#1A73E8" }],
     title: "Your Accounts, Your Logins",
     description:
       "Your Google Ads account and tag container are built under your own logins from day one, so there is never a migration headache if anything changes.",

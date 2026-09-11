@@ -20,7 +20,7 @@ const HUB_Y = 250;
 const BOTTOM_Y = 440;
 
 const sourceNodes = [
-  { Icon: GlobeIcon, label: "Website", color: "#0066FF" },
+  { Icon: GlobeIcon, label: "Website", color: "#1A73E8" },
   { Icon: ShopifyLogo, label: "Shopify", color: "#7AB55C" },
   { Icon: WordPressLogo, label: "WordPress", color: "#21759B" },
   { Icon: WooCommerceLogo, label: "WooCommerce", color: "#96588A" },
@@ -84,7 +84,7 @@ export default function DataFlowDiagram() {
               key={`in-${i}`}
               id={`flow-in-${i}`}
               d={`M ${x} ${TOP_Y} L ${X_POSITIONS[2]} ${HUB_Y}`}
-              stroke="#0066FF"
+              stroke="#1A73E8"
               strokeOpacity={0.25}
               strokeWidth={2}
               fill="none"
@@ -103,7 +103,7 @@ export default function DataFlowDiagram() {
           ))}
 
           {X_POSITIONS.map((_, i) => (
-            <circle key={`dot-in-${i}`} r={5} fill="#0066FF">
+            <circle key={`dot-in-${i}`} r={5} fill="#1A73E8">
               <animateMotion
                 dur="2.8s"
                 begin={`${i * 0.35}s`}
@@ -141,7 +141,7 @@ export default function DataFlowDiagram() {
           y={HUB_Y}
           Icon={ShieldCheckIcon}
           label="Server-Side Tagging"
-          color="#0066FF"
+          color="#1A73E8"
           size={72}
         />
 
