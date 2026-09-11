@@ -5,7 +5,7 @@ export const site = {
   email: "hello@ppchanif.example",
   whatsappNumber: "8801780641343",
   whatsappUrl: "https://wa.me/8801780641343",
-  calendlyUrl: "https://calendly.com/shakilahmedsamims/30min?hide_gdpr_banner=1",
+  calendlyUrl: "https://calendly.com/ppchanif/30min?hide_gdpr_banner=1",
   web3formsAccessKey: "fbbc127d-3482-4ca9-a1dc-6cf9feea76b0",
   regions: "UK, US, and Canada",
 };
