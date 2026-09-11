@@ -52,24 +52,27 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3">
               <h1 className="h1-style">Who I Am</h1>
               <p className="body-lg-copy text-neutral">
-                I run PPC HANIF, a Google Ads management and conversion
-                tracking agency working with local service businesses and
-                B2B companies across the UK, US, and Canada. [Client to
-                replace with a first-person paragraph naming real experience,
-                years in the field, and location context.]
+                I&rsquo;m Md Abu Hanif, a Google Ads Specialist helping local
+                service businesses and B2B companies generate more qualified
+                leads and customers through strategic, performance-focused
+                advertising. With 5+ years of experience and 200+ clients
+                served, I focus on building Google Ads campaigns that are
+                backed by accurate conversion tracking, clear data, and
+                continuous optimization.
               </p>
             </div>
 
             <div className="flex flex-col gap-3">
               <h2 className="h2-style">Why I Do This</h2>
               <p className="body-lg-copy text-neutral">
-                [Client to replace with a specific, first-person paragraph.
-                State the concrete problem that led to starting this agency,
-                for example a pattern of accounts spending money on ads with
-                broken or missing conversion tracking, or agencies that
-                report on clicks and impressions instead of booked jobs and
-                closed revenue. Keep it specific and checkable, not a
-                general statement about being passionate about marketing.]
+                I started working in Google Ads after seeing too many
+                businesses spend money on campaigns without knowing what was
+                actually driving results. My goal is simple: build Google Ads
+                campaigns that focus on real business outcomes&mdash;not just
+                clicks and impressions. By combining smart campaign strategy,
+                ongoing optimization, and reliable conversion tracking, I
+                help businesses understand what is working, reduce wasted ad
+                spend, and turn more searches into valuable customers.
               </p>
             </div>
 
