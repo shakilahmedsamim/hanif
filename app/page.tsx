@@ -19,6 +19,8 @@ import {
   ReplyIcon,
   ShieldCheckIcon,
   ShieldIcon,
+  StarIcon,
+  TargetIcon,
   UpworkLogo,
   WhatsAppIcon,
 } from "@/components/icons";
@@ -206,12 +208,20 @@ export default function HomePage() {
         <div className="relative content-wrap grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border">
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border flex items-center gap-1.5">
+                <TargetIcon className="w-3.5 h-3.5 text-accent shrink-0" />
                 Google Ads Management
               </span>
-              <span className="caption-copy px-3 py-1.5 rounded-full bg-success/10 text-success flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                5.0 Rated on Upwork &amp; Fiverr
+              <span className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border flex items-center gap-1.5">
+                <span className="flex items-center gap-0.5" aria-hidden="true">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <StarIcon key={i} className="w-3 h-3 text-[#F5A623]" />
+                  ))}
+                </span>
+                5.0 on
+                <UpworkLogo className="w-4 h-4 text-[#6FDA44] shrink-0" />
+                &amp;
+                <FiverrLogo className="w-4 h-4 text-[#1DBF73] shrink-0" />
               </span>
             </div>
 
