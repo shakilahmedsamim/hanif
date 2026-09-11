@@ -80,17 +80,19 @@ export default function Nav() {
                 </button>
 
                 {servicesOpen && (
-                  <div className="absolute top-full right-0 mt-4 w-72 rounded-2xl bg-white border border-border shadow-lg p-2">
-                    {serviceLinks.map((service) => (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        onClick={() => setServicesOpen(false)}
-                        className="block px-3 py-2.5 rounded-lg text-[15px] text-ink hover:bg-accent/10 hover:text-accent transition-colors"
-                      >
-                        {service.label}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full right-0 pt-4 w-72">
+                    <div className="rounded-2xl bg-white border border-border shadow-lg p-2">
+                      {serviceLinks.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          onClick={() => setServicesOpen(false)}
+                          className="block px-3 py-2.5 rounded-lg text-[15px] text-ink hover:bg-accent/10 hover:text-accent transition-colors"
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
