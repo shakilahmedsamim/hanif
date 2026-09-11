@@ -23,24 +23,24 @@ const sampleFindings: Finding[] = [
 
 const auditAreas = [
   {
-    title: "Account settings and security",
-    body: "Who has access, what changed recently in the account history, and whether basic settings like location and language targeting actually match who you sell to.",
+    title: "Account Structure & Campaign Setup",
+    body: "I check your campaign and ad group structure, targeting, settings, budgets, and overall setup to make sure your account is built around your business goals.",
   },
   {
-    title: "Conversion tracking accuracy",
-    body: "Whether Enhanced Conversions is verified and not just switched on, whether conversions are being double-counted between GA4 and Google Ads, and whether conversion values are real numbers instead of a flat placeholder.",
+    title: "Keyword & Search Term Performance",
+    body: "I identify high-intent opportunities, irrelevant searches, negative keyword gaps, and areas where your budget may be going toward low-quality traffic.",
   },
   {
-    title: "Wasted spend and search terms",
-    body: "What people are actually typing before your ad shows, and how much of the budget is going to searches that were never going to become a customer.",
+    title: "Ad Performance & Messaging",
+    body: "I review your ads, messaging, assets, and relevance to make sure they match what potential customers are actually searching for.",
   },
   {
-    title: "Ad quality and landing page experience",
-    body: "How closely your ads match the intent behind the search, and whether the landing page a click lands on actually supports the offer in the ad.",
+    title: "Conversion Tracking & Lead Quality",
+    body: "I check whether your conversions are being tracked accurately and whether Google Ads is receiving the right signals to optimize toward valuable leads, not just activity.",
   },
   {
-    title: "Bidding strategy alignment",
-    body: "Whether the bidding strategy fits how long your sales cycle actually is, since a strategy built for instant online purchases behaves badly on a business where the sale closes on a phone call weeks later.",
+    title: "Bidding, Budget & Optimization",
+    body: "I evaluate your bidding strategy, budget allocation, and campaign performance to find opportunities to reduce wasted spend and improve efficiency.",
   },
 ];
 
@@ -91,24 +91,27 @@ export default function GoogleAdsAuditPage() {
             <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
               Google Ads Audit
             </span>
-            <h1 className="h1-style max-w-[18ch]">
-              What I Actually Check When I Audit a Google Ads Account
+            <h1 className="h1-style max-w-[20ch]">
+              Find What&rsquo;s Holding Your Google Ads Back
             </h1>
             <p className="body-lg-copy text-neutral">
-              Most audits are a list of generic recommendations generated
-              from an account export. This one is not. I go through the
-              account live, section by section, and tell you specifically
-              what is broken, what is wasted, and what to fix first.
+              I review your Google Ads account from top to bottom to
+              identify wasted spend, missed opportunities, tracking issues,
+              and campaign weaknesses that may be limiting your results.
+              You&rsquo;ll get a clear picture of what needs attention and
+              what to fix first.
             </p>
             <p className="body-copy text-neutral">
-              An account can look busy and still be losing money quietly.
-              Impressions and clicks can climb every month while the
-              conversion data behind them is wrong, which means Smart
-              Bidding is optimizing toward the wrong signal without anyone
-              noticing. The five areas below are where that usually starts.
+              More clicks don&rsquo;t always mean more customers. A campaign
+              can generate plenty of traffic while wasting budget on the
+              wrong searches, targeting, ads, or bidding strategy. My audit
+              focuses on the areas that directly impact lead quality,
+              conversion performance, and your overall return on ad spend.
             </p>
 
-            <div className="flex flex-col gap-5 mt-2">
+            <p className="font-semibold text-ink mt-2">5 Things I Check</p>
+
+            <div className="flex flex-col gap-5">
               {auditAreas.map((area, i) => (
                 <div key={area.title} className="flex gap-4">
                   <span className="flex items-center justify-center w-8 h-8 rounded-full bg-accent/10 text-accent font-semibold text-[14px] shrink-0">
