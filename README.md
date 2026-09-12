@@ -39,17 +39,19 @@ npm run build
 - If the plan is **static-only** (most shared hosting), keep the static
   export as-is — this is the safer default and what ships in this repo.
 
-## Assets the client needs to supply (see file-naming conventions inline)
+## Adding real images (no code changes needed)
 
-- `about-founder.jpg` — founder photo, About page
-- `case-study-01-before.png` / `case-study-01-after.png` (and so on) — Case
-  Study screenshots, 1200x750px recommended
+Upload files into `public/images/` on GitHub with the exact filenames
+documented in `public/images/README.md`. `about-founder.jpg` is already
+wired up and appears automatically once uploaded; anything else (case
+study screenshots, client logos, a Google Partner badge) needs the
+filename passed along so it can be linked into the right page.
+
+## Outstanding content
+
 - Real client testimonials, names, business names, and cities (Home page)
-- Real client logos / a current Google Partner badge
 - YouTube video ID for the homepage founder video (replace `VIDEO_ID` in
   `app/page.tsx`)
-- Final business name/branding to replace the "PPC HANIF" working name
-  in `lib/site.ts`
 
 ## Tracking (Section 5 of the build brief)
 
