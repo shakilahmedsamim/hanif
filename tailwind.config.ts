@@ -18,16 +18,16 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
+          "var(--font-poppins)",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
-          "Inter",
           "Roboto",
           "Helvetica",
           "Arial",
           "sans-serif",
         ],
-        heading: ["var(--font-heading)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        heading: ["var(--font-poppins)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       fontSize: {
         "hero-desktop": ["56px", { lineHeight: "1.4", fontWeight: "600" }],
