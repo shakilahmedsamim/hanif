@@ -13,7 +13,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   { slot: 1, name: "Rehan Mir", business: "raiseagency.dk, Denmark", youtubeId: "rUeCKnYxJtU" },
   { slot: 2, name: "Carlton", business: "United Kingdom", youtubeId: "7P5sdlnvg6E" },
-  { slot: 3, name: "Jake Dimo", business: "odindigital.com.au, Australia", youtubeId: "ZfqEvlyu8ok" },
+  { slot: 3, name: "Jake", business: "Australia", youtubeId: "XQrCyuqkiuo" },
   { slot: 4, name: "[Client name]", business: "[Business name, city]" },
   { slot: 5, name: "[Client name]", business: "[Business name, city]" },
   { slot: 6, name: "[Client name]", business: "[Business name, city]" },
