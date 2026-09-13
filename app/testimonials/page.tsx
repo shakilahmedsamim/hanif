@@ -26,7 +26,13 @@ export default function TestimonialsPage() {
       <section className="section pt-0">
         <div className="content-wrap px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t) => (
-            <TestimonialVideo key={t.slot} slot={t.slot} name={t.name} business={t.business} />
+            <TestimonialVideo
+              key={t.slot}
+              slot={t.slot}
+              name={t.name}
+              business={t.business}
+              youtubeId={t.youtubeId}
+            />
           ))}
         </div>
       </section>

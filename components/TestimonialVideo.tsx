@@ -7,17 +7,29 @@ export default function TestimonialVideo({
   slot,
   name,
   business,
+  youtubeId,
 }: {
   slot: number;
   name: string;
   business: string;
+  youtubeId?: string;
 }) {
   const [failed, setFailed] = useState(false);
   const src = `/videos/testimonial-${slot}.mp4`;
 
   return (
     <div className="rounded-2xl bg-white border border-border overflow-hidden flex flex-col">
-      {failed ? (
+      {youtubeId ? (
+        <div className="aspect-[9/16] bg-ink">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}`}
+            title={`${name} testimonial`}
+            className="w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      ) : failed ? (
         <div className="aspect-[9/16] bg-background border-b border-dashed border-border flex flex-col items-center justify-center gap-3 px-6 text-center">
           <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-border">
             <PlayIcon className="w-5 h-5 text-neutral" />
