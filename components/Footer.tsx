@@ -20,6 +20,7 @@ const siteLinks = [
   { href: "/about/", label: "About" },
   { href: "/services/", label: "Services" },
   { href: "/case-study/", label: "Case Study" },
+  { href: "/testimonials/", label: "Testimonials" },
   { href: "/contact/", label: "Contact" },
   { href: "/book-a-call/", label: "Book a Free Call" },
 ];
