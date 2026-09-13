@@ -22,7 +22,7 @@ export default function TestimonialVideo({
       {youtubeId ? (
         <div className="aspect-[9/16] bg-ink">
           <iframe
-            src={`https://www.youtube.com/embed/${youtubeId}`}
+            src={`https://www.youtube.com/embed/${youtubeId}?controls=1&modestbranding=1&rel=0&iv_load_policy=3&fs=1`}
             title={`${name} testimonial`}
             className="w-full h-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
