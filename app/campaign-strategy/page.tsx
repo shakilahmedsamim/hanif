@@ -191,9 +191,9 @@ export default function CampaignStrategyPage() {
       <section className="section bg-white">
         <div className="content-wrap px-6">
           <div className="max-w-[620px] mb-10">
-            <p className="caption-copy uppercase tracking-wider text-accent mb-3">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
               Search Campaign Strategy
-            </p>
+            </span>
             <h2 className="h2-style mb-3">Built for Qualified Leads, Not Clicks</h2>
             <p className="body-copy text-neutral">
               An illustrative example: a home renovation company running
@@ -254,9 +254,9 @@ export default function CampaignStrategyPage() {
       <section className="section">
         <div className="content-wrap px-6">
           <div className="max-w-[620px] mb-10">
-            <p className="caption-copy uppercase tracking-wider text-accent mb-3">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
               Performance Max Strategy
-            </p>
+            </span>
             <h2 className="h2-style mb-3">Built for Volume Across Every Google Surface</h2>
             <p className="body-copy text-neutral">
               An illustrative example: a restaurant brand running
@@ -301,9 +301,9 @@ export default function CampaignStrategyPage() {
       <section className="section bg-white">
         <div className="content-wrap px-6">
           <div className="max-w-[620px] mx-auto text-center mb-12">
-            <p className="caption-copy uppercase tracking-wider text-accent mb-3">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
               After Launch
-            </p>
+            </span>
             <h2 className="h2-style mb-3">The Optimization Schedule, Not a One-Time Setup</h2>
             <p className="body-copy text-neutral">
               The same schedule applies to both Search and Performance Max
