@@ -62,33 +62,78 @@ const overviewServices = [
 ];
 
 const googleOnlineItems = [
-  "Google tag and GA4 event tracking for form submissions, calls, and purchases",
-  "Enhanced Conversions for Leads, pairing GCLID with hashed contact data so matching holds up as browsers restrict cookies",
-  "Verification that conversions are not double-counted between GA4 and Google Ads before the account optimizes against them",
+  {
+    title: "Every form, call, and purchase tracked",
+    body: "Google tag and GA4 event tracking installed for form submissions, calls, and purchases as they happen on the site.",
+  },
+  {
+    title: "Leads still matched after a cookie is blocked",
+    body: "Enhanced Conversions for Leads pairs the click ID with encrypted contact data, so matching holds up as browsers restrict cookies.",
+  },
+  {
+    title: "No conversion counted twice",
+    body: "Checked so the same conversion is not counted in both GA4 and Google Ads before the account starts optimizing against it.",
+  },
 ];
 
 const googleOfflineItems = [
-  "GCLID captured and stored on the CRM lead record at first contact",
-  "Offline conversion imports so a signed contract, completed consultation, or closed deal is fed back to Google Ads once it closes",
-  "Uploads routed through the current Data Manager API, since the older Google Ads API offline conversion upload path is being phased out",
+  {
+    title: "Every lead's ad click saved automatically",
+    body: "The click ID is captured the moment a lead comes in and stored on their CRM record, so it is never lost track of.",
+  },
+  {
+    title: "Closed deals reported back to Google Ads",
+    body: "When a lead becomes a signed contract, completed consultation, or closed deal, that result is fed back to Google Ads automatically.",
+  },
+  {
+    title: "Built on Google's current upload method",
+    body: "Offline results are uploaded through Google's current Data Manager API, since the older upload method is being phased out.",
+  },
 ];
 
 const metaItems = [
-  "Meta Pixel and Conversions API implemented together with a shared event_id, so the same action reaches Meta once, not twice",
-  "Event Match Quality (EMQ) reviewed in Meta Events Manager and improved by sending more of the customer parameters Meta actually uses to match",
-  "Hashed email and phone data included in server events, so matching survives iOS privacy changes and ad blockers that would otherwise drop the pixel-only event",
+  {
+    title: "One event counted once, not twice",
+    body: "The Meta Pixel and the Conversions API are connected with a shared ID, so the same action never gets reported to Meta twice.",
+  },
+  {
+    title: "Match quality checked, not assumed",
+    body: "Meta's own match-quality score is reviewed and improved by sending more of the customer details Meta actually uses to match a sale to an ad.",
+  },
+  {
+    title: "Tracking survives iPhone privacy settings",
+    body: "Customer email and phone data is sent encrypted, so matching still works even when iOS privacy settings or an ad blocker would drop the pixel alone.",
+  },
 ];
 
 const ga4SetupItems = [
-  "GA4 property structure built around your actual business, not the default e-commerce template",
-  "Key events marked as conversions and pushed into GA4 so they are usable everywhere GA4 data flows, including Google Ads",
-  "Cross-domain tracking and internal traffic filters configured so session data is not skewed by staff visits or subdomain hops",
+  {
+    title: "Set up around your business, not a template",
+    body: "The GA4 property structure is built around what your business actually sells or does, not Google's default e-commerce template.",
+  },
+  {
+    title: "The right actions marked as conversions",
+    body: "Key actions are marked as conversions inside GA4, so that data is usable everywhere it flows to, including Google Ads.",
+  },
+  {
+    title: "Numbers that are not thrown off by noise",
+    body: "Staff visits and subdomain hops are filtered out, so traffic and session numbers reflect real visitors, not internal noise.",
+  },
 ];
 
 const ga4ReportingItems = [
-  "Custom Explorations built around the questions the business actually asks, not GA4's default reports",
-  "Funnel and path reports showing exactly where visitors drop off before converting",
-  "Shareable dashboards so the numbers that matter are visible without logging into GA4 to dig for them",
+  {
+    title: "Reports built for your real questions",
+    body: "Custom reports built around the questions the business actually asks, not GA4's generic default reports.",
+  },
+  {
+    title: "See exactly where visitors give up",
+    body: "Funnel and path reports show exactly where visitors drop off before converting, not just that they did.",
+  },
+  {
+    title: "The numbers, without logging into GA4",
+    body: "Shareable dashboards put the numbers that matter in front of you, without needing to dig through GA4 to find them.",
+  },
 ];
 
 const socialPixelItems = [
@@ -114,16 +159,16 @@ const socialPixelItems = [
 
 const sameOriginPoints = [
   {
-    title: "Cookies set from your own domain",
-    body: "A server-side tagging container hosted on a subdomain of your own site, rather than a generic third-party domain, can set cookies as HttpOnly and read them in a first-party context.",
+    title: "Tracking runs from your own website",
+    body: "The tracking server lives on your own domain instead of a generic outside one, so it is treated as part of your site, not a stranger.",
   },
   {
-    title: "More resilient to Safari and browser restrictions",
-    body: "First-party cookies are meaningfully more resilient to Safari's Intelligent Tracking Prevention and similar browser restrictions than third-party cookies, which is where a large share of lost conversions comes from.",
+    title: "Survives Safari and iPhone privacy settings",
+    body: "Because it looks like part of your site, this tracking is far less likely to get blocked by Safari or iPhone privacy settings, where most lost conversions come from.",
   },
   {
-    title: "Fewer third-party connections on the page",
-    body: "When the tagging server runs in a first-party context, the browser talks to fewer external domains directly, which also supports a tighter content security policy on the site itself.",
+    title: "A cleaner, faster website too",
+    body: "With fewer outside connections happening on the page, the site itself also loads a little cleaner and faster.",
   },
 ];
 
@@ -136,12 +181,12 @@ const faqItems = [
   {
     question: "What does same-origin or first-party server-side tracking actually mean?",
     answer:
-      "It means the server container that receives and forwards conversion events is hosted on a subdomain of your own website rather than a generic third-party domain, which lets it set cookies in a first-party context that are more resilient to Safari's Intelligent Tracking Prevention and similar browser restrictions.",
+      "It means the tracking server lives on your own website's domain instead of a generic outside one. Browsers like Safari treat it as part of your site rather than a stranger, so it is far less likely to be blocked.",
   },
   {
     question: "Can offline sales really be tracked back to a specific ad click?",
     answer:
-      "Yes. Capturing the GCLID at first contact and storing it on the CRM lead record lets an automation push the closed-deal event back to Google's Enhanced Conversions for Leads once the deal is marked won, closing the loop between an offline sale and the ad click that started it.",
+      "Yes. The ad click that brought in each lead is saved to their CRM record the moment they come in. Once that lead becomes a closed deal, an automation reports it back to Google Ads, closing the loop between the offline sale and the ad click that started it.",
   },
   {
     question: "What is the difference between GA4 event tracking and Google Ads conversion tracking?",
@@ -149,14 +194,14 @@ const faqItems = [
       "GA4 measures and reports on events across the whole site regardless of traffic source, while Google Ads conversion tracking specifically ties an event back to the ad click, keyword, and campaign that produced it so Smart Bidding can optimize against it. Both are usually set up together, but GA4 alone does not feed the Google Ads bidding algorithm.",
   },
   {
-    question: "Do Enhanced Conversions require sending personal data to Google in plain text?",
+    question: "Is customer data like email and phone sent to Google or Meta as plain text?",
     answer:
-      "No. Enhanced Conversions works by hashing customer data such as email and phone number with the SHA-256 algorithm in the browser or server before it is sent, so Google receives a one-way hash used only for matching, not the original readable value.",
+      "No. Email and phone data is scrambled into an unreadable code before it ever leaves your site, so Google and Meta receive a code used only for matching, never the original readable value.",
   },
   {
     question: "How do I verify conversion tracking is actually working, not just installed?",
     answer:
-      "Google Tag Assistant and the Google Ads diagnostics tab confirm a tag is firing and receiving Enhanced Conversions matches, while Meta Events Manager's test events tool and Event Match Quality score confirm the same for Meta. A tag that fires without a verified match rate is not proof tracking is accurate.",
+      "A tag firing is not proof it is accurate. Google's and Meta's own diagnostic tools are used to confirm a fired event was actually received and matched to a real ad click, not just that the tag ran.",
   },
   {
     question: "Is server-side tagging required for every account, or only larger ones?",
@@ -322,25 +367,31 @@ export default function ConversionTrackingPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
+            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-5">
               <h3 className="h3-style">Online</h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-4">
                 {googleOnlineItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                  <li key={item.title} className="flex items-start gap-3">
                     <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                    <span className="body-copy">{item}</span>
+                    <span>
+                      <span className="block font-semibold text-ink">{item.title}</span>
+                      <span className="body-copy text-neutral">{item.body}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
+            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-5">
               <h3 className="h3-style">Offline</h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-4">
                 {googleOfflineItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                  <li key={item.title} className="flex items-start gap-3">
                     <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                    <span className="body-copy">{item}</span>
+                    <span>
+                      <span className="block font-semibold text-ink">{item.title}</span>
+                      <span className="body-copy text-neutral">{item.body}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -366,11 +417,14 @@ export default function ConversionTrackingPage() {
             applies to Meta, for accounts that also run it or need it
             tracked even without us managing the ad spend.
           </p>
-          <ul className="flex flex-col gap-4 max-w-[720px]">
+          <ul className="flex flex-col gap-5 max-w-[720px]">
             {metaItems.map((item) => (
-              <li key={item} className="flex items-start gap-3">
+              <li key={item.title} className="flex items-start gap-3">
                 <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                <span className="body-copy">{item}</span>
+                <span>
+                  <span className="block font-semibold text-ink">{item.title}</span>
+                  <span className="body-copy text-neutral">{item.body}</span>
+                </span>
               </li>
             ))}
           </ul>
@@ -396,25 +450,31 @@ export default function ConversionTrackingPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
+            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-5">
               <h3 className="h3-style">Setup</h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-4">
                 {ga4SetupItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                  <li key={item.title} className="flex items-start gap-3">
                     <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                    <span className="body-copy">{item}</span>
+                    <span>
+                      <span className="block font-semibold text-ink">{item.title}</span>
+                      <span className="body-copy text-neutral">{item.body}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
+            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-5">
               <h3 className="h3-style">Custom Reporting</h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-4">
                 {ga4ReportingItems.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                  <li key={item.title} className="flex items-start gap-3">
                     <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                    <span className="body-copy">{item}</span>
+                    <span>
+                      <span className="block font-semibold text-ink">{item.title}</span>
+                      <span className="body-copy text-neutral">{item.body}</span>
+                    </span>
                   </li>
                 ))}
               </ul>
