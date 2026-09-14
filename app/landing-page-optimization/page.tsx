@@ -2,7 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
 import CoreWebVitalsGauge from "@/components/CoreWebVitalsGauge";
-import { ArrowRightIcon, CheckIcon, ClockIcon, ShieldCheckIcon, TargetIcon } from "@/components/icons";
+import { landingPageExamples } from "@/lib/landingPageExamples";
+import {
+  ArrowRightIcon,
+  CheckIcon,
+  ClockIcon,
+  ClipboardIcon,
+  GlobeIcon,
+  LayersIcon,
+  LinkIcon,
+  ShieldCheckIcon,
+  StarIcon,
+  TargetIcon,
+} from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Landing Page Optimization",
@@ -49,6 +61,54 @@ const comparisonRows = [
   {
     them: "Tap targets and forms tested only by resizing a desktop browser",
     us: "Tap targets, forms, and booking widgets tested on an actual phone",
+  },
+];
+
+const anatomyItems = [
+  {
+    icon: LayersIcon,
+    title: "Hero and lead form, side by side",
+    body: "The offer and the way to claim it sit in the same first screen, above the fold, so a visitor never has to scroll to find out what to do next.",
+  },
+  {
+    icon: ShieldCheckIcon,
+    title: "A trust bar directly under the hero",
+    body: "Rating, years in business, licensing, and a guarantee, shown as a single scannable strip before anything else, so credibility is established before the pitch continues.",
+  },
+  {
+    icon: ClipboardIcon,
+    title: "Services broken out with real photos",
+    body: "What is included is shown as separate, named items with actual photos, not one paragraph describing everything at once.",
+  },
+  {
+    icon: TargetIcon,
+    title: "A numbered process, three to five steps",
+    body: "Removing the guesswork of what happens after someone converts is often the difference between a submitted form and an abandoned tab.",
+  },
+  {
+    icon: CheckIcon,
+    title: "A specific reason to choose this business",
+    body: "Not generic claims. Specific, checkable differentiators, laid out as a grid, not buried in a paragraph.",
+  },
+  {
+    icon: ClockIcon,
+    title: "A real, time-bound offer",
+    body: "A discount or bundle with an actual condition attached creates urgency that a generic 'contact us' cannot.",
+  },
+  {
+    icon: StarIcon,
+    title: "Testimonials with names, cities, and star ratings",
+    body: "Specific, attributed feedback reads as real. A block of unattributed praise reads as filler.",
+  },
+  {
+    icon: GlobeIcon,
+    title: "A service-area list",
+    body: "Naming every city or neighborhood served gives local searchers an immediate relevance signal and reinforces it for search engines too.",
+  },
+  {
+    icon: ArrowRightIcon,
+    title: "The same call to action, repeated",
+    body: "Every major section ends with the same offer and the same button, not a new competing idea each time. This page you are reading follows the same rule.",
   },
 ];
 
@@ -149,6 +209,32 @@ export default function LandingPageOptimizationPage() {
 
       <section className="section bg-white">
         <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-12">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              The Anatomy
+            </span>
+            <h2 className="h2-style mb-3">What a High-Converting Landing Page Actually Includes</h2>
+            <p className="body-copy text-neutral">
+              Not theory. The same nine elements, pulled from a real
+              conversion-focused page built for a local service client.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {anatomyItems.map((item) => (
+              <div key={item.title} className="rounded-2xl bg-background border border-border p-6 flex flex-col gap-3">
+                <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-border text-accent">
+                  <item.icon className="w-5 h-5" />
+                </span>
+                <h3 className="font-semibold text-ink text-[15px]">{item.title}</h3>
+                <p className="body-copy text-neutral">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="content-wrap px-6">
           <h2 className="h2-style text-center mb-10">
             What Most Landing Pages Do vs What This One Does
           </h2>
@@ -195,6 +281,45 @@ export default function LandingPageOptimizationPage() {
       </section>
 
       <section className="section bg-white">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-12">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              See It Live
+            </span>
+            <h2 className="h2-style mb-3">Real Landing Pages I&apos;ve Built</h2>
+            <p className="body-copy text-neutral">
+              Not mockups. Click through and see the actual page a client&apos;s
+              ad traffic lands on.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {landingPageExamples.map((example) => (
+              <a
+                key={example.url}
+                href={example.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl bg-background border border-border p-6 flex flex-col gap-3"
+              >
+                <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-border text-accent">
+                  <GlobeIcon className="w-5 h-5" />
+                </span>
+                <div>
+                  <p className="font-semibold text-ink text-[15px]">{example.name}</p>
+                  <p className="caption-copy">{example.industry}</p>
+                </div>
+                <p className="body-copy text-neutral">{example.description}</p>
+                <span className="inline-flex items-center gap-1.5 text-[14px] font-medium text-accent mt-1">
+                  <LinkIcon className="w-3.5 h-3.5" />
+                  View Live Page
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="content-wrap px-6 max-w-[860px]">
           <h2 className="h2-style text-center mb-10">Common Questions</h2>
           <Faq items={faqItems} />
