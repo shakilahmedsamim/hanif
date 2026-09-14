@@ -51,7 +51,7 @@ const offerCards = [
   {
     logo: GoogleTagManagerLogo,
     color: "#246FDB",
-    title: "Conversion Tracking Setup",
+    title: "Analytics & Conversion Tracking",
     description:
       "Enhanced Conversions, server-side tagging, and offline imports, so every call, form, and closed deal is attributed to the ad that earned it.",
     linkLabel: "See the full tracking stack",

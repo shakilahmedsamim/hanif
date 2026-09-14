@@ -25,6 +25,6 @@ export const serviceLinks = [
   { href: "/google-ads-audit/", label: "Audit & Report" },
   { href: "/campaign-strategy/", label: "Campaign Strategy" },
   { href: "/landing-page-optimization/", label: "Landing Page Optimization" },
-  { href: "/conversion-tracking/", label: "Ads Conversion Tracking" },
+  { href: "/conversion-tracking/", label: "Analytics & Conversion Tracking" },
   { href: "/google-ads-management/", label: "Google Ads Setup and Management" },
 ];

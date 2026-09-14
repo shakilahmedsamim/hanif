@@ -11,7 +11,7 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Conversion Tracking Setup",
+  title: "Analytics & Conversion Tracking",
   description:
     "Google Ads conversion tracking, online and offline, plus Meta Conversions API and first-party server-side tagging for more accurate event data.",
   alternates: { canonical: "/conversion-tracking/" },
@@ -95,7 +95,7 @@ export default function ConversionTrackingPage() {
         <div className="content-wrap px-6 grid md:grid-cols-2 gap-10 items-center">
           <div className="flex flex-col gap-6">
             <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-              Conversion Tracking Setup
+              Analytics & Conversion Tracking
             </span>
             <h1 className="h1-style">
               Tracking Built for Google Ads First, Then Every Other Platform
