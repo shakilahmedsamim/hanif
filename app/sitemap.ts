@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "contact/",
     "book-a-call/",
     "privacy-policy/",
+    "campaign-strategy/",
     "google-ads-management/",
     "google-ads-audit/",
     "conversion-tracking/",

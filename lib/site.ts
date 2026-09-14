@@ -23,7 +23,7 @@ export const navLinks = [
 
 export const serviceLinks = [
   { href: "/google-ads-audit/", label: "Audit & Report" },
-  { href: "/services/#google-ads-management", label: "Campaign Strategy" },
+  { href: "/campaign-strategy/", label: "Campaign Strategy" },
   { href: "/landing-page-optimization/", label: "Landing Page Optimization" },
   { href: "/conversion-tracking/", label: "Ads Conversion Tracking" },
   { href: "/google-ads-management/", label: "Google Ads Setup and Management" },
