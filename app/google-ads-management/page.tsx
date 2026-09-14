@@ -3,20 +3,136 @@ import Link from "next/link";
 import Faq from "@/components/Faq";
 import {
   ArrowRightIcon,
+  BarChartIcon,
+  CalendarIcon,
   CheckIcon,
+  DocumentIcon,
+  GearIcon,
   GoogleAdsLogo,
   MapPinIcon,
+  SearchIcon,
   ShopifyLogo,
   ShoppingCartIcon,
+  TargetIcon,
+  TrendingUpIcon,
+  UsersIcon,
   WooCommerceLogo,
 } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "Google Ads Management",
   description:
-    "Google Ads campaign management for local service businesses and ecommerce brands, built around calls, bookings, and purchases instead of raw clicks.",
+    "End-to-end Google Ads management, from campaign strategy and keyword research to conversion tracking, optimization, and reporting.",
   alternates: { canonical: "/google-ads-management/" },
 };
+
+const heroChecklist = [
+  "More Qualified Leads",
+  "Lower Wasted Spend",
+  "Data-Driven Decisions",
+  "A Clear Path to Growth",
+];
+
+const stages = [
+  {
+    number: "01",
+    icon: SearchIcon,
+    color: "#1A73E8",
+    title: "Research & Strategy",
+    body: "Understand your business, market, customers, and goals.",
+    items: [
+      { letter: "A", label: "Account & Campaign Audit" },
+      { letter: "B", label: "Business Analysis" },
+      { letter: "C", label: "Campaign Strategy" },
+      { letter: "D", label: "Keyword Research" },
+      { letter: "E", label: "Audience & Location Targeting" },
+    ],
+  },
+  {
+    number: "02",
+    icon: GearIcon,
+    color: "#0A7D4F",
+    title: "Build & Launch",
+    body: "Create targeted campaigns designed to attract the right customers.",
+    items: [
+      { letter: "F", label: "Campaign Structure" },
+      { letter: "G", label: "Ad Groups & Keywords" },
+      { letter: "H", label: "Negative Keywords" },
+      { letter: "I", label: "Compelling Ad Copy" },
+      { letter: "J", label: "Budget & Bidding Setup" },
+    ],
+  },
+  {
+    number: "03",
+    icon: BarChartIcon,
+    color: "#E37400",
+    title: "Track & Measure",
+    body: "Set up accurate tracking so we know what's actually working.",
+    items: [
+      { letter: "K", label: "Conversion Tracking" },
+      { letter: "L", label: "GA4 & Tag Manager" },
+      { letter: "M", label: "Enhanced Conversions" },
+      { letter: "N", label: "Call & Form Tracking" },
+      { letter: "O", label: "CRM / Offline Tracking" },
+    ],
+  },
+  {
+    number: "04",
+    icon: TrendingUpIcon,
+    color: "#7C5CFC",
+    title: "Optimize & Grow",
+    body: "Continuously improve performance and reduce wasted spend.",
+    items: [
+      { letter: "P", label: "Search Term Analysis" },
+      { letter: "Q", label: "Keyword Optimization" },
+      { letter: "R", label: "Ad Testing" },
+      { letter: "S", label: "Landing Page Alignment" },
+      { letter: "T", label: "Conversion Rate Optimization" },
+    ],
+  },
+  {
+    number: "05",
+    icon: DocumentIcon,
+    color: "#174EA6",
+    title: "Report & Improve",
+    body: "Clear reporting and strategic recommendations for long-term growth.",
+    items: [
+      { letter: "U", label: "Performance Monitoring" },
+      { letter: "V", label: "Lead Quality & ROI" },
+      { letter: "W", label: "Regular Reporting" },
+      { letter: "X", label: "Identify & Remove Waste" },
+      { letter: "Y", label: "Year-Round Optimization" },
+      { letter: "Z", label: "Data-Driven Decisions" },
+    ],
+  },
+];
+
+const trustPoints = [
+  {
+    icon: BarChartIcon,
+    color: "#1A73E8",
+    title: "Strategy Before Spend",
+    body: "Every campaign starts with a clear strategy.",
+  },
+  {
+    icon: TargetIcon,
+    color: "#0A7D4F",
+    title: "Tracking You Can Trust",
+    body: "Know which campaigns, keywords, and ads are actually generating conversions.",
+  },
+  {
+    icon: GearIcon,
+    color: "#E37400",
+    title: "Continuous Optimization",
+    body: "Campaigns are regularly reviewed and improved based on data.",
+  },
+  {
+    icon: UsersIcon,
+    color: "#7C5CFC",
+    title: "Business-Focused Decisions",
+    body: "Optimization focuses on meaningful business outcomes, not vanity metrics.",
+  },
+];
 
 const localItems = [
   "Search campaigns built around the exact services and service area you cover, not broad match guesswork",
@@ -30,13 +146,6 @@ const ecommerceItems = [
   "Product feed structure and labeling that lets you separate high-margin and low-margin products in bidding",
   "Purchase and add-to-cart tracking verified against your actual order data, not just platform-reported conversions",
   "Campaign structure that protects brand search spend from being cannibalized by broad Performance Max targeting",
-];
-
-const processSteps = [
-  { title: "Account Review", body: "We look at what is already running, what is tracked correctly, and what is wasting budget." },
-  { title: "Structure Rebuild", body: "Campaigns are organized around your services or product catalog, not left as one broad group." },
-  { title: "Tracking Verification", body: "Every conversion source is checked before the account starts optimizing against it." },
-  { title: "Ongoing Management", body: "Bids, budgets, and negative keywords are adjusted against real bookings or purchases." },
 ];
 
 const faqItems = [
@@ -87,138 +196,244 @@ export default function GoogleAdsManagementPage() {
               Google Ads Management
             </span>
             <h1 className="h1-style">
-              Google Ads Built Around Bookings and Purchases, Not Clicks
+              Your Google Ads, Managed From <span className="text-accent">A to Z</span>
             </h1>
             <p className="body-lg-copy text-neutral">
-              Whether you run a local service business or sell products
-              online, the campaign structure, tracking, and bidding strategy
-              are different problems. We build each one the way it actually
-              needs to work.
+              From campaign strategy and keyword research to conversion
+              tracking, optimization, and reporting — I manage the entire
+              Google Ads process with one goal: turning your advertising
+              budget into measurable business results.
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap items-center gap-3">
               <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
                 Book My Free 30-Minute Audit
                 <ArrowRightIcon className="w-4 h-4" />
               </Link>
-              <p className="caption-copy">
-                No payment required. We will look at your current account and
-                tell you exactly what is costing you money.
-              </p>
+              <a
+                href="#a-z-process"
+                className="w-fit inline-flex items-center gap-2 font-semibold text-ink px-5 py-3 rounded-full border border-border hover:border-accent hover:text-accent transition-colors"
+              >
+                See How I Work
+                <ArrowRightIcon className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
           <div className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-xl bg-background border border-border p-5 flex flex-col items-center text-center gap-2">
-                <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-border text-accent">
-                  <MapPinIcon className="w-5 h-5" />
-                </span>
-                <p className="font-semibold text-ink text-[14px]">Local Service</p>
-                <p className="caption-copy">Search + LSA + call tracking</p>
-              </div>
-              <div className="rounded-xl bg-background border border-border p-5 flex flex-col items-center text-center gap-2">
-                <span className="flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-border text-accent">
-                  <ShoppingCartIcon className="w-5 h-5" />
-                </span>
-                <p className="font-semibold text-ink text-[14px]">Ecommerce</p>
-                <p className="caption-copy">Shopping + Performance Max</p>
-              </div>
-            </div>
-
-            <div className="flex justify-center">
-              <ArrowRightIcon className="w-4 h-4 text-neutral rotate-90" />
-            </div>
-
-            <div className="rounded-xl bg-accent/5 border border-accent/20 p-5 flex items-center gap-4">
-              <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-white border border-border shrink-0">
-                <span className="flex" style={{ color: "#4285F4" }}>
-                  <GoogleAdsLogo className="w-6 h-6" />
-                </span>
+            <div className="flex items-center gap-5">
+              <span className="flex items-center justify-center w-16 h-16 shrink-0" style={{ color: "#4285F4" }}>
+                <GoogleAdsLogo className="w-14 h-14" />
               </span>
-              <div>
-                <p className="font-semibold text-ink">One Google Ads Account</p>
-                <p className="caption-copy">Structured, tracked, and bid the way each business model needs</p>
-              </div>
+              <ul className="flex flex-col gap-2">
+                {heroChecklist.map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <CheckIcon className="w-4 h-4 text-success shrink-0" />
+                    <span className="font-semibold text-ink text-[14px]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl bg-background border border-border p-4">
+              <p className="body-copy text-neutral italic">
+                &quot;You shouldn&apos;t have to worry about whether your
+                campaigns are targeting the right people, tracking the right
+                conversions, or wasting money on irrelevant clicks. I handle
+                the complete Google Ads management process — so you can
+                focus on running your business.&quot;
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section pt-0">
-        <div className="content-wrap px-6 grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
-            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
-              <MapPinIcon className="w-6 h-6" />
+      <section id="a-z-process" className="section pt-0 scroll-mt-20">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-12">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              My A–Z Process
             </span>
-            <h2 className="h3-style">For Local Service Businesses</h2>
-            <ul className="flex flex-col gap-3">
-              {localItems.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                  <span className="body-copy">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <h2 className="h2-style mb-3">A Complete System for Better Results</h2>
+            <p className="body-copy text-neutral">
+              I follow a clear 5-stage process that covers everything from
+              strategy to ongoing optimization.
+            </p>
           </div>
 
-          <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
-            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
-              <ShoppingCartIcon className="w-6 h-6" />
+          <div className="grid md:grid-cols-5 gap-5">
+            {stages.map((stage) => (
+              <div key={stage.number} className="flex flex-col gap-4">
+                <div className="flex flex-col items-center text-center gap-3">
+                  <span
+                    className="caption-copy !text-white font-semibold w-7 h-7 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: stage.color }}
+                  >
+                    {stage.number}
+                  </span>
+                  <span
+                    className="flex items-center justify-center w-14 h-14 rounded-2xl"
+                    style={{ backgroundColor: `${stage.color}1A`, color: stage.color }}
+                  >
+                    <stage.icon className="w-6 h-6" />
+                  </span>
+                  <h3 className="font-semibold text-ink text-[17px]">{stage.title}</h3>
+                  <p className="body-copy text-neutral !text-[13px]">{stage.body}</p>
+                </div>
+
+                <div className="rounded-2xl bg-white border border-border p-4 flex flex-col gap-3 flex-1">
+                  {stage.items.map((item) => (
+                    <div key={item.letter} className="flex items-start gap-2.5">
+                      <span
+                        className="caption-copy !text-white font-semibold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                        style={{ backgroundColor: stage.color }}
+                      >
+                        {item.letter}
+                      </span>
+                      <span className="body-copy !text-[13px] leading-snug">{item.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl bg-accent/5 border border-accent/20 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-4 mt-10">
+            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-border text-accent shrink-0">
+              <TargetIcon className="w-6 h-6" />
             </span>
-            <h2 className="h3-style">For Ecommerce Brands</h2>
-            <ul className="flex flex-col gap-3">
-              {ecommerceItems.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
-                  <span className="body-copy">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="flex items-center gap-3 border-t border-border pt-4 mt-1">
-              <span className="caption-copy">Tracking built for</span>
-              <span className="flex items-center gap-1.5" style={{ color: "#7AB55C" }}>
-                <ShopifyLogo className="w-4 h-4" />
-                <span className="caption-copy !text-inherit font-semibold">Shopify</span>
+            <p className="body-copy">
+              <span className="block font-semibold text-ink text-[17px] mb-1">
+                You don&apos;t need another person who simply checks your Google Ads account.
               </span>
-              <span className="flex items-center gap-1.5" style={{ color: "#96588A" }}>
-                <WooCommerceLogo className="w-4 h-4" />
-                <span className="caption-copy !text-inherit font-semibold">WooCommerce</span>
+              <span className="text-neutral">
+                You need someone who understands the entire journey — from
+                the moment a customer searches to the moment they become a
+                lead or customer.
               </span>
-            </div>
+            </p>
           </div>
         </div>
       </section>
 
       <section className="section bg-white">
         <div className="content-wrap px-6">
-          <h2 className="h2-style text-center mb-12">How Management Actually Works</h2>
-          <div className="grid md:grid-cols-4 gap-8">
-            {processSteps.map((step, i) => (
-              <div key={step.title} className="flex flex-col gap-2">
-                <span className="caption-copy text-accent">Step {i + 1}</span>
-                <h3 className="h3-style">{step.title}</h3>
-                <p className="body-copy text-neutral">{step.body}</p>
+          <div className="max-w-[620px] mx-auto text-center mb-10">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              Why Work With Me
+            </span>
+            <h2 className="h2-style mb-3">A Smarter Approach to Google Ads</h2>
+          </div>
+          <div className="grid md:grid-cols-4 gap-6">
+            {trustPoints.map((point) => (
+              <div key={point.title} className="rounded-2xl bg-background border border-border p-6 flex flex-col items-center text-center gap-2">
+                <span
+                  className="flex items-center justify-center w-11 h-11 rounded-full mb-1"
+                  style={{ backgroundColor: `${point.color}1A`, color: point.color }}
+                >
+                  <point.icon className="w-5 h-5" />
+                </span>
+                <h3 className="font-semibold text-ink text-[16px]">{point.title}</h3>
+                <p className="body-copy text-neutral">{point.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section pt-0">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-10">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              Built Around Your Business
+            </span>
+            <h2 className="h2-style mb-3">A Different Playbook for a Different Business Model</h2>
+            <p className="body-copy text-neutral">
+              A local service business and an ecommerce store need different
+              campaign structures, tracking, and bidding strategies. Each
+              one is built the way it actually needs to work.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
+              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
+                <MapPinIcon className="w-6 h-6" />
+              </span>
+              <h3 className="h3-style">For Local Service Businesses</h3>
+              <ul className="flex flex-col gap-3">
+                {localItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
+                    <span className="body-copy">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl bg-white border border-border p-8 flex flex-col gap-4">
+              <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-accent">
+                <ShoppingCartIcon className="w-6 h-6" />
+              </span>
+              <h3 className="h3-style">For Ecommerce Brands</h3>
+              <ul className="flex flex-col gap-3">
+                {ecommerceItems.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 mt-0.5 text-success shrink-0" />
+                    <span className="body-copy">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center gap-3 border-t border-border pt-4 mt-1">
+                <span className="caption-copy">Tracking built for</span>
+                <span className="flex items-center gap-1.5" style={{ color: "#7AB55C" }}>
+                  <ShopifyLogo className="w-4 h-4" />
+                  <span className="caption-copy !text-inherit font-semibold">Shopify</span>
+                </span>
+                <span className="flex items-center gap-1.5" style={{ color: "#96588A" }}>
+                  <WooCommerceLogo className="w-4 h-4" />
+                  <span className="caption-copy !text-inherit font-semibold">WooCommerce</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-white">
         <div className="content-wrap px-6 max-w-[860px]">
           <h2 className="h2-style text-center mb-10">Common Questions</h2>
           <Faq items={faqItems} />
         </div>
       </section>
 
-      <section className="section bg-ink">
-        <div className="content-wrap px-6 text-center flex flex-col items-center gap-5">
-          <h2 className="h2-style !text-white max-w-[22ch]">
-            Get a Free 30-Minute Audit of Your Ad Account
-          </h2>
-          <Link href="/book-a-call/" className="btn-primary bg-accent">
-            Book My Free 30-Minute Audit
-          </Link>
+      <section className="section">
+        <div className="content-wrap px-6">
+          <div className="rounded-2xl bg-accent p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
+            <span className="flex items-center justify-center w-12 h-12 rounded-full bg-white/15 text-white shrink-0">
+              <TrendingUpIcon className="w-6 h-6" />
+            </span>
+            <div className="flex-1">
+              <h2 className="h3-style !text-white mb-2">
+                Ready to Stop Guessing Where Your Ad Budget Is Going?
+              </h2>
+              <p className="body-copy !text-white/85">
+                Let&apos;s audit your Google Ads, identify the biggest
+                opportunities, and build a clear plan for improving
+                performance.
+              </p>
+            </div>
+            <div className="flex flex-col items-start md:items-end gap-2 shrink-0">
+              <Link
+                href="/book-a-call/"
+                className="btn-primary bg-none bg-white !text-accent w-fit inline-flex items-center gap-2 hover:bg-white/90"
+              >
+                Book My Free 30-Minute Audit
+                <ArrowRightIcon className="w-4 h-4" />
+              </Link>
+              <span className="flex items-center gap-1.5 caption-copy !text-white/70">
+                <CalendarIcon className="w-4 h-4" />
+                No obligation. Just real insights.
+              </span>
+            </div>
+          </div>
         </div>
       </section>
     </>
