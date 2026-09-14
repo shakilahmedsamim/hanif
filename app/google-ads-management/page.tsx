@@ -196,7 +196,8 @@ export default function GoogleAdsManagementPage() {
               Google Ads Management
             </span>
             <h1 className="h1-style">
-              Your Google Ads, Managed From <span className="text-accent">A to Z</span>
+              Your Google Ads, Managed From{" "}
+              <span className="text-accent whitespace-nowrap">A to Z</span>
             </h1>
             <p className="body-lg-copy text-neutral">
               From campaign strategy and keyword research to conversion
