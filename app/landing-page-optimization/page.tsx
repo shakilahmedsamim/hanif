@@ -186,28 +186,30 @@ export default function LandingPageOptimizationPage() {
   return (
     <>
       <section className="section pt-12 pb-8">
-        <div className="content-wrap px-6 max-w-[720px]">
-          <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-            Landing Page Optimization
-          </span>
-          <h1 className="h1-style mt-4">
-            The Page an Ad Sends Traffic to Decides Whether It Was Worth It
-          </h1>
-          <p className="body-lg-copy text-neutral mt-4">
-            A well-tracked, well-targeted ad still fails if the page it
-            sends traffic to is slow, unfocused, or saying something
-            different from the ad itself. This page was built under the
-            same rules described below, so you are looking at the
-            standard before you take my word for it.
-          </p>
-          <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2 mt-6">
-            Book My Free 30-Minute Audit
-            <ArrowRightIcon className="w-4 h-4" />
-          </Link>
+        <div className="content-wrap px-6">
+          <div className="max-w-[640px]">
+            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
+              Landing Page Optimization
+            </span>
+            <h1 className="h1-style mt-4 max-w-[18ch]">
+              The Page an Ad Sends Traffic to Decides Whether It Was Worth It
+            </h1>
+            <p className="body-lg-copy text-neutral mt-4">
+              A well-tracked, well-targeted ad still fails if the page it
+              sends traffic to is slow, unfocused, or saying something
+              different from the ad itself. This page was built under the
+              same rules described below, so you are looking at the
+              standard before you take my word for it.
+            </p>
+            <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2 mt-6">
+              Book My Free 30-Minute Audit
+              <ArrowRightIcon className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="section pt-0">
+      <section className="section pt-0 bg-white">
         <div className="content-wrap px-6">
           <div className="max-w-[620px] mx-auto text-center mb-10">
             <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
@@ -255,7 +257,7 @@ export default function LandingPageOptimizationPage() {
         </div>
       </section>
 
-      <section className="section pt-0">
+      <section className="section">
         <div className="content-wrap px-6 grid md:grid-cols-3 gap-6">
           {proofPoints.map((point) => (
             <div key={point.title} className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-3">
