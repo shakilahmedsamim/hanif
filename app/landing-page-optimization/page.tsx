@@ -187,14 +187,14 @@ export default function LandingPageOptimizationPage() {
     <>
       <section className="section pt-12 pb-8">
         <div className="content-wrap px-6">
-          <div className="max-w-[640px]">
+          <div className="max-w-[780px]">
             <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
               Landing Page Optimization
             </span>
-            <h1 className="h1-style mt-4 max-w-[18ch]">
+            <h1 className="h1-style mt-4">
               The Page an Ad Sends Traffic to Decides Whether It Was Worth It
             </h1>
-            <p className="body-lg-copy text-neutral mt-4">
+            <p className="body-lg-copy text-neutral mt-4 max-w-[640px]">
               A well-tracked, well-targeted ad still fails if the page it
               sends traffic to is slow, unfocused, or saying something
               different from the ad itself. This page was built under the
