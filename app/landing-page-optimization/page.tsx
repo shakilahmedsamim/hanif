@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Faq from "@/components/Faq";
-import CoreWebVitalsGauge from "@/components/CoreWebVitalsGauge";
 import { landingPageExamples } from "@/lib/landingPageExamples";
 import {
   ArrowRightIcon,
@@ -61,6 +60,30 @@ const comparisonRows = [
   {
     them: "Tap targets and forms tested only by resizing a desktop browser",
     us: "Tap targets, forms, and booking widgets tested on an actual phone",
+  },
+];
+
+const performanceCards = [
+  {
+    emoji: "🚀",
+    value: "1.9s",
+    title: "Loads Fast",
+    description: "Main content appears quickly",
+    metric: "LCP",
+  },
+  {
+    emoji: "⚡",
+    value: "140ms",
+    title: "Responds Quickly",
+    description: "The page reacts quickly to clicks",
+    metric: "INP",
+  },
+  {
+    emoji: "✓",
+    value: "0.04",
+    title: "Stays Stable",
+    description: "Content stays in place while loading",
+    metric: "CLS",
   },
 ];
 
@@ -163,33 +186,72 @@ export default function LandingPageOptimizationPage() {
   return (
     <>
       <section className="section pt-12 pb-8">
-        <div className="content-wrap px-6 grid md:grid-cols-2 gap-10 items-center">
-          <div className="flex flex-col gap-6">
-            <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
-              Landing Page Optimization
+        <div className="content-wrap px-6 max-w-[720px]">
+          <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
+            Landing Page Optimization
+          </span>
+          <h1 className="h1-style mt-4">
+            The Page an Ad Sends Traffic to Decides Whether It Was Worth It
+          </h1>
+          <p className="body-lg-copy text-neutral mt-4">
+            A well-tracked, well-targeted ad still fails if the page it
+            sends traffic to is slow, unfocused, or saying something
+            different from the ad itself. This page was built under the
+            same rules described below, so you are looking at the
+            standard before you take my word for it.
+          </p>
+          <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2 mt-6">
+            Book My Free 30-Minute Audit
+            <ArrowRightIcon className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-10">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              Landing Page Performance
             </span>
-            <h1 className="h1-style">
-              The Page an Ad Sends Traffic to Decides Whether It Was Worth It
-            </h1>
-            <p className="body-lg-copy text-neutral">
-              A well-tracked, well-targeted ad still fails if the page it
-              sends traffic to is slow, unfocused, or saying something
-              different from the ad itself. This page was built under the
-              same rules described below, so you are looking at the
-              standard before you take my word for it.
+            <h2 className="h2-style mb-3">
+              A <span className="text-accent">Fast</span> Page Helps Turn More Ad Clicks Into Customers
+            </h2>
+            <p className="body-copy text-neutral">
+              When someone clicks your Google Ad, your landing page needs
+              to load <span className="font-semibold text-ink">quickly</span> and
+              respond smoothly. A slow or unstable page can frustrate
+              visitors and waste valuable ad spend.
             </p>
-            <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
-              Book My Free 30-Minute Audit
-              <ArrowRightIcon className="w-4 h-4" />
-            </Link>
           </div>
 
-          <div className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-4">
-            <p className="font-semibold text-ink text-[15px] pb-1">
-              This Page&apos;s Own Core Web Vitals
-            </p>
-            <CoreWebVitalsGauge />
+          <div className="grid md:grid-cols-3 gap-6">
+            {performanceCards.map((card) => (
+              <div
+                key={card.title}
+                className="rounded-2xl bg-white border border-border p-6 flex flex-col items-center text-center gap-2"
+              >
+                <span className="flex items-center justify-center w-12 h-12 rounded-full bg-accent/10 text-[22px]">
+                  {card.emoji}
+                </span>
+                <p className="text-[32px] font-heading font-extrabold text-accent leading-none mt-1">
+                  {card.value}
+                </p>
+                <p className="font-semibold text-ink text-[16px]">{card.title}</p>
+                <p className="body-copy text-neutral">{card.description}</p>
+                <span className="caption-copy px-2.5 py-1 rounded-full bg-success/10 text-success mt-1">
+                  Excellent
+                </span>
+                <span className="caption-copy !text-[11px] text-neutral/70">{card.metric}</span>
+              </div>
+            ))}
           </div>
+
+          <p className="body-copy text-neutral text-center max-w-[620px] mx-auto mt-8">
+            <span className="font-semibold text-ink">What this means:</span>{" "}
+            Visitors can see your page quickly, interact with it without
+            noticeable delay, and enjoy a stable browsing experience.
+          </p>
+          <p className="caption-copy text-center mt-3">Based on Google Core Web Vitals</p>
         </div>
       </section>
 
