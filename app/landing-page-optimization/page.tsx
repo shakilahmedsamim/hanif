@@ -258,7 +258,18 @@ export default function LandingPageOptimizationPage() {
       </section>
 
       <section className="section">
-        <div className="content-wrap px-6 grid md:grid-cols-3 gap-6">
+        <div className="content-wrap px-6">
+          <div className="max-w-[620px] mx-auto text-center mb-10">
+            <span className="inline-block caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent mb-3">
+              Proof, Not a Promise
+            </span>
+            <h2 className="h2-style mb-3">This Page Follows Its Own Rules</h2>
+            <p className="body-copy text-neutral">
+              Before asking you to trust a claim about landing pages, here is
+              how this one was built.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
           {proofPoints.map((point) => (
             <div key={point.title} className="rounded-2xl bg-white border border-border shadow-sm p-6 flex flex-col gap-3">
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent">
@@ -268,6 +279,7 @@ export default function LandingPageOptimizationPage() {
               <p className="body-copy text-neutral">{point.body}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
