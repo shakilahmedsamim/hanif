@@ -74,15 +74,6 @@ export default function ContactForm() {
       </div>
 
       <div className="form-field">
-        <label htmlFor="ad_platform">Are you currently running Google Ads?</label>
-        <select id="ad_platform" name="ad_platform" className="form-input pr-8 text-ellipsis">
-          <option>Yes, running Google Ads</option>
-          <option>No, not yet</option>
-          <option>Not sure</option>
-        </select>
-      </div>
-
-      <div className="form-field">
         <label htmlFor="message">Tell us about your business and goals</label>
         <textarea id="message" name="message" required rows={4} className="form-input resize-none" />
       </div>
