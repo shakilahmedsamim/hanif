@@ -13,8 +13,8 @@ export default function FinalCtaForm() {
     <section className="section">
       <div className="content-wrap px-6">
         <div className="rounded-[32px] bg-white border border-border shadow-xl p-8 md:p-14">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-6">
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="flex flex-col gap-6 h-full">
               <span className="caption-copy px-3 py-1.5 rounded-full bg-accent/10 text-accent w-fit">
                 Ready When You Are
               </span>
@@ -38,7 +38,7 @@ export default function FinalCtaForm() {
                 ))}
               </ul>
 
-              <Link href="/book-a-call/" className="btn-primary w-fit">
+              <Link href="/book-a-call/" className="btn-primary w-fit mt-auto">
                 Book My Free 30-Minute Audit
               </Link>
             </div>
