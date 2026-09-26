@@ -11,7 +11,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "hvac-plumbing-home-services",
-    industry: "HVAC, Plumbing & Home Services",
+    industry: "Home Services",
     headline: "Fixing Tracking Before Scaling Spend",
     problem:
       "The client was struggling to generate consistent, qualified leads from Google Ads. Campaign performance was affected by broad and low-intent traffic, inefficient keyword targeting, and ad spend going toward searches that were not driving meaningful enquiries.",
