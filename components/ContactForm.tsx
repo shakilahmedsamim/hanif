@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/lib/site";
 import { generateEventId, trackFormSubmit } from "@/lib/tracking";
+import { ArrowRightIcon, TargetIcon } from "@/components/icons";
 
 export default function ContactForm() {
   const [result, setResult] = useState("");
@@ -48,7 +49,20 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-5 bg-white rounded-2xl border border-border p-6 md:p-8">
+    <form
+      onSubmit={onSubmit}
+      className="flex flex-col gap-6 bg-white rounded-2xl border border-border p-5 sm:p-6 md:p-8"
+    >
+      <div className="flex items-center gap-3">
+        <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 text-accent shrink-0">
+          <TargetIcon className="w-5 h-5" />
+        </span>
+        <div>
+          <p className="font-semibold text-ink text-[16px] leading-tight">Get Your Free Audit</p>
+          <p className="caption-copy">Takes about 2 minutes</p>
+        </div>
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-5">
         <div className="form-field">
           <label htmlFor="name">Name</label>
@@ -81,11 +95,16 @@ export default function ContactForm() {
       <input ref={gclidRef} type="hidden" name="gclid" />
       <input ref={fbclidRef} type="hidden" name="fbclid" />
 
-      <button type="submit" disabled={sending} className="btn-primary disabled:opacity-60">
+      <button
+        type="submit"
+        disabled={sending}
+        className="btn-primary disabled:opacity-60 inline-flex items-center justify-center gap-2"
+      >
         Get My Free Audit
+        <ArrowRightIcon className="w-4 h-4" />
       </button>
 
-      <span role="status" className="caption-copy min-h-[1.2em]">
+      <span role="status" className="caption-copy min-h-[1.2em] text-center">
         {result}
       </span>
     </form>

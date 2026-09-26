@@ -78,10 +78,10 @@ body {
   }
 
   .form-field {
-    @apply flex flex-col gap-2 text-[15px] font-medium text-ink;
+    @apply flex flex-col gap-2 text-[15px] font-semibold text-ink;
   }
 
   .form-input {
-    @apply w-full rounded-btn border border-border bg-white px-4 py-3 text-[16px] text-ink placeholder:text-neutral focus:outline-none focus:ring-2 focus:ring-accent min-h-[44px];
+    @apply w-full rounded-xl border border-border bg-background px-4 py-3 text-[16px] text-ink placeholder:text-neutral placeholder:font-normal transition-colors duration-150 focus:outline-none focus:border-accent focus:bg-white focus:ring-2 focus:ring-accent/30 min-h-[44px];
   }
 }
