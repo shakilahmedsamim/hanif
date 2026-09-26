@@ -14,9 +14,9 @@ export const caseStudies: CaseStudy[] = [
     industry: "HVAC, Plumbing & Home Services",
     headline: "Fixing Tracking Before Scaling Spend",
     problem:
-      "[Client to supply the one-sentence starting problem, for example: conversions were being double-counted and Local Services Ads leads were not tied to the campaign that produced them.]",
+      "The client was struggling to generate consistent, qualified leads from Google Ads. Campaign performance was affected by broad and low-intent traffic, inefficient keyword targeting, and ad spend going toward searches that were not driving meaningful enquiries.",
     fix:
-      "[Client to supply the specific tracking or campaign fix applied, for example: rebuilt GA4 event tracking, verified Enhanced Conversions for Leads, and connected Local Services Ads call tracking.]",
+      "We restructured and optimized the Google Ads campaign around high-intent search terms, refined location targeting, added negative keywords, improved ad messaging, and continuously optimized bids and budgets based on conversion performance.",
     stats: [
       { label: "Leads / Month", value: "TBD" },
       { label: "Cost Per Lead", value: "TBD" },
