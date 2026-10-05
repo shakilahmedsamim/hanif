@@ -6,6 +6,9 @@ export type CaseStudy = {
   fix: string;
   stats: { label: string; value: string }[];
   quote?: string;
+  clientBackground?: string;
+  challenges?: { title: string; body: string }[];
+  approach?: { title: string; body: string }[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -21,6 +24,36 @@ export const caseStudies: CaseStudy[] = [
       { label: "Leads / Month", value: "TBD" },
       { label: "Cost Per Lead", value: "TBD" },
       { label: "CPL Change", value: "TBD" },
+    ],
+    clientBackground:
+      "A home services business running Google Ads to generate local leads. Before this engagement, the account had been live for a while, but campaign structure and targeting had not been revisited since launch, and lead volume had become inconsistent.",
+    challenges: [
+      {
+        title: "Broad, Low-Intent Traffic",
+        body: "A large share of clicks were coming from broad and low-intent search terms that were unlikely to turn into a real job.",
+      },
+      {
+        title: "Inefficient Keyword Targeting",
+        body: "Keyword targeting had not been refined around the services and search terms that were actually producing valuable leads.",
+      },
+      {
+        title: "Spend Going to the Wrong Searches",
+        body: "Budget was going toward searches that were not driving meaningful enquiries, instead of the intent-driven searches that matter.",
+      },
+    ],
+    approach: [
+      {
+        title: "Rebuilt Around High-Intent Search Terms",
+        body: "Campaigns were restructured around high-intent search terms and refined location targeting, so budget focused on searches that were actually likely to convert.",
+      },
+      {
+        title: "Added Negative Keywords & Improved Ad Messaging",
+        body: "Negative keywords were added to filter out irrelevant traffic, and ad messaging was improved to match what high-intent searchers were actually looking for.",
+      },
+      {
+        title: "Continuous Bid & Budget Optimization",
+        body: "Bids and budgets were continuously optimized based on real conversion performance, not just click volume.",
+      },
     ],
   },
   {
