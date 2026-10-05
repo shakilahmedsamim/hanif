@@ -4,9 +4,19 @@ import { notFound } from "next/navigation";
 import { caseStudies } from "@/lib/caseStudies";
 import BeforeAfterStrip from "@/components/BeforeAfterStrip";
 import ContactForm from "@/components/ContactForm";
-import { ArrowRightIcon, BarChartIcon, ClockIcon, XCircleIcon } from "@/components/icons";
+import {
+  ArrowRightIcon,
+  BarChartIcon,
+  ClockIcon,
+  MapPinIcon,
+  SearchIcon,
+  ShieldCheckIcon,
+  TargetIcon,
+  XCircleIcon,
+} from "@/components/icons";
 
 const challengeIcons = [XCircleIcon, ClockIcon, BarChartIcon];
+const focusAreaIcons = [TargetIcon, SearchIcon, ShieldCheckIcon, MapPinIcon];
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
@@ -50,7 +60,10 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
             <span className="caption-copy px-2.5 py-1 rounded-full bg-accent/10 text-accent w-fit inline-block mb-4">
               {study.industry} · Case Study
             </span>
-            <h1 className="h1-style mb-6">{study.headline}</h1>
+            <h1 className="h1-style mb-4">{study.headline}</h1>
+            {study.subtitle && (
+              <p className="body-lg-copy text-neutral mb-6 max-w-prose">{study.subtitle}</p>
+            )}
             <div className="flex flex-wrap gap-3">
               <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
                 Get Results Like This
@@ -71,7 +84,11 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
             <p className="caption-copy uppercase tracking-wider text-neutral mb-3">
               Key Business Impact
             </p>
-            <div className="grid grid-cols-3 gap-4 rounded-2xl bg-white border border-border p-6">
+            <div
+              className={`grid gap-4 rounded-2xl bg-white border border-border p-6 ${
+                study.stats.length === 4 ? "grid-cols-2 sm:grid-cols-4" : "grid-cols-3"
+              }`}
+            >
               {study.stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-[24px] font-semibold text-accent">{stat.value}</p>
@@ -79,6 +96,11 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
                 </div>
               ))}
             </div>
+            {study.campaignPeriod && (
+              <p className="caption-copy text-center mt-3">
+                Campaign Period: {study.campaignPeriod}
+              </p>
+            )}
           </div>
 
           {study.clientBackground && (
@@ -110,6 +132,26 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
             </div>
           )}
 
+          {study.focusAreas && (
+            <div>
+              <h2 className="h3-style mb-5">Key Areas We Focused On</h2>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {study.focusAreas.map((item, i) => {
+                  const Icon = focusAreaIcons[i % focusAreaIcons.length];
+                  return (
+                    <div key={item.title} className="rounded-2xl bg-white border border-border p-5 flex flex-col gap-3">
+                      <span className="flex items-center justify-center w-9 h-9 rounded-full bg-accent/10 text-accent">
+                        <Icon className="w-4 h-4" />
+                      </span>
+                      <p className="font-semibold text-ink text-[15px]">{item.title}</p>
+                      <p className="body-copy text-neutral">{item.body}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           <div>
             <h2 className="h3-style mb-3">The Fix</h2>
             <p className="body-lg-copy text-neutral">{study.fix}</p>
@@ -131,13 +173,50 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
             </div>
           )}
 
+          {study.resultsNarrative && (
+            <div>
+              <h2 className="h3-style mb-3">The Results</h2>
+              <p className="body-lg-copy text-neutral">{study.resultsNarrative}</p>
+            </div>
+          )}
+
+          {study.resultsSnapshot && (
+            <div>
+              <p className="caption-copy uppercase tracking-wider text-neutral mb-3">
+                Results Snapshot
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 rounded-2xl bg-white border border-border p-6">
+                {study.resultsSnapshot.map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <p className="text-[20px] font-semibold text-success">{stat.value}</p>
+                    <p className="caption-copy leading-tight">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {study.whatMadeDifference && (
+            <div>
+              <h2 className="h3-style mb-3">What Made the Difference?</h2>
+              <p className="body-lg-copy text-neutral">{study.whatMadeDifference}</p>
+            </div>
+          )}
+
+          {study.finalTakeaway && (
+            <div className="rounded-2xl bg-accent/5 border border-accent/20 p-6 md:p-8">
+              <p className="font-semibold text-ink text-[18px] mb-2">{study.finalTakeaway.title}</p>
+              <p className="body-copy text-neutral">{study.finalTakeaway.body}</p>
+            </div>
+          )}
+
           {study.quote && (
             <div className="rounded-2xl bg-ink p-8">
               <p className="text-white text-[19px] leading-relaxed">&quot;{study.quote}&quot;</p>
             </div>
           )}
 
-          <BeforeAfterStrip />
+          {!study.resultsSnapshot && <BeforeAfterStrip />}
         </div>
         </div>
       </section>
@@ -168,11 +247,22 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
       <section className="section bg-white">
         <div className="content-wrap px-6">
           <div className="max-w-[620px] mx-auto text-center mb-10">
-            <h2 className="h2-style mb-3">Stop Guessing. Get Lead Systems That Work.</h2>
-            <p className="body-copy text-neutral">
-              Tell me what is currently running in your account, and I will
-              tell you plainly what to fix first.
+            <h2 className="h2-style mb-3">
+              {study.ctaHeadline || "Stop Guessing. Get Lead Systems That Work."}
+            </h2>
+            <p className="body-copy text-neutral mb-6">
+              {study.ctaBody ||
+                "Tell me what is currently running in your account, and I will tell you plainly what to fix first."}
             </p>
+            {study.ctaButtonLabel && (
+              <Link
+                href="/book-a-call/"
+                className="btn-primary w-fit inline-flex items-center gap-2 mx-auto"
+              >
+                {study.ctaButtonLabel}
+                <ArrowRightIcon className="w-4 h-4" />
+              </Link>
+            )}
           </div>
           <div className="max-w-[560px] mx-auto">
             <ContactForm />

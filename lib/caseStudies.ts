@@ -2,59 +2,100 @@ export type CaseStudy = {
   slug: string;
   industry: string;
   headline: string;
+  subtitle?: string;
   problem: string;
   fix: string;
   stats: { label: string; value: string }[];
+  campaignPeriod?: string;
   quote?: string;
   clientBackground?: string;
   challenges?: { title: string; body: string }[];
+  focusAreas?: { title: string; body: string }[];
   approach?: { title: string; body: string }[];
+  resultsNarrative?: string;
+  resultsSnapshot?: { label: string; value: string }[];
+  whatMadeDifference?: string;
+  finalTakeaway?: { title: string; body: string };
+  ctaHeadline?: string;
+  ctaBody?: string;
+  ctaButtonLabel?: string;
 };
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "hvac-plumbing-home-services",
-    industry: "Home Services",
-    headline: "Fixing Tracking Before Scaling Spend",
+    slug: "home-cleaning-13-conversions-7-days",
+    industry: "Home Cleaning Services",
+    headline: "Generating 13 Conversions for a Home Cleaning Business in 7 Days",
+    subtitle:
+      "How we optimized a Google Ads campaign to generate more conversion-focused traffic for a home cleaning business.",
     problem:
-      "The client was struggling to generate consistent, qualified leads from Google Ads. Campaign performance was affected by broad and low-intent traffic, inefficient keyword targeting, and ad spend going toward searches that were not driving meaningful enquiries.",
+      "The campaign had room for improvement across keyword targeting, search intent, negative keywords, and overall campaign targeting. Instead of simply increasing the advertising budget, the focus was on making the existing budget work more efficiently by directing it toward searches with stronger potential to generate home cleaning enquiries.",
     fix:
-      "We restructured and optimized the Google Ads campaign around high-intent search terms, refined location targeting, added negative keywords, improved ad messaging, and continuously optimized bids and budgets based on conversion performance.",
+      "We optimized the Google Ads campaign around high-intent home cleaning searches, refined keyword targeting, improved negative keyword coverage, and focused the available budget on traffic more closely aligned with the business's services.",
     stats: [
-      { label: "Leads / Month", value: "TBD" },
-      { label: "Cost Per Lead", value: "TBD" },
-      { label: "CPL Change", value: "TBD" },
+      { label: "Conversions", value: "13" },
+      { label: "Cost Per Conversion", value: "$33.68" },
+      { label: "Clicks", value: "208" },
+      { label: "Ad Spend", value: "$437.84" },
     ],
+    campaignPeriod: "Sep 28 – Oct 4, 2026",
     clientBackground:
-      "A home services business running Google Ads to generate local leads. Before this engagement, the account had been live for a while, but campaign structure and targeting had not been revisited since launch, and lead volume had become inconsistent.",
-    challenges: [
+      "A home cleaning business was using Google Ads to generate new customer enquiries. The campaign was already receiving search traffic, but there was an opportunity to improve the quality and relevance of that traffic. The goal was to attract people actively searching for home cleaning services and turn that search intent into more conversion opportunities.",
+    focusAreas: [
       {
-        title: "Broad, Low-Intent Traffic",
-        body: "A large share of clicks were coming from broad and low-intent search terms that were unlikely to turn into a real job.",
+        title: "High-Intent Search Traffic",
+        body: "Focused the campaign around searches that showed stronger intent to hire a home cleaning service.",
       },
       {
-        title: "Inefficient Keyword Targeting",
-        body: "Keyword targeting had not been refined around the services and search terms that were actually producing valuable leads.",
+        title: "Keyword Optimization",
+        body: "Reviewed keyword targeting to reduce exposure to searches that were less relevant to the business.",
       },
       {
-        title: "Spend Going to the Wrong Searches",
-        body: "Budget was going toward searches that were not driving meaningful enquiries, instead of the intent-driven searches that matter.",
+        title: "Negative Keyword Management",
+        body: "Added and refined negative keywords to help prevent budget from being spent on irrelevant searches.",
+      },
+      {
+        title: "Location & Targeting Optimization",
+        body: "Refined campaign targeting to focus the advertising budget more effectively within the intended service area.",
       },
     ],
     approach: [
       {
-        title: "Rebuilt Around High-Intent Search Terms",
-        body: "Campaigns were restructured around high-intent search terms and refined location targeting, so budget focused on searches that were actually likely to convert.",
+        title: "Focused on High-Intent Searches",
+        body: "The campaign was optimized around searches from users actively looking for home cleaning services, helping improve traffic relevance and reduce wasted clicks.",
       },
       {
-        title: "Added Negative Keywords & Improved Ad Messaging",
-        body: "Negative keywords were added to filter out irrelevant traffic, and ad messaging was improved to match what high-intent searchers were actually looking for.",
+        title: "Refined Keyword & Negative Keyword Targeting",
+        body: "Keyword targeting was reviewed and negative keywords were added and refined to filter out irrelevant searches and keep the campaign focused on potential customers.",
       },
       {
-        title: "Continuous Bid & Budget Optimization",
-        body: "Bids and budgets were continuously optimized based on real conversion performance, not just click volume.",
+        title: "Optimized Campaign Targeting",
+        body: "Campaign targeting was reviewed to help ensure the advertising budget was being used more efficiently within the intended market.",
+      },
+      {
+        title: "Focused on Conversion Performance",
+        body: "Instead of optimizing purely for clicks, the campaign was managed with conversion performance in mind, prioritizing traffic with stronger potential to generate customer enquiries.",
       },
     ],
+    resultsNarrative:
+      "After the optimization period, the campaign generated 13 conversions from 208 clicks, at a cost per conversion of $33.68, with a total Google Ads spend of $437.84.",
+    resultsSnapshot: [
+      { label: "Clicks", value: "208" },
+      { label: "Conversions", value: "13" },
+      { label: "Ad Spend", value: "$437.84" },
+      { label: "Cost / Conversion", value: "$33.68" },
+      { label: "Avg. CPC", value: "$2.10" },
+    ],
+    whatMadeDifference:
+      "The focus wasn't simply on generating more clicks. The campaign was optimized with a stronger emphasis on relevant search intent, keyword quality, negative keyword coverage, and conversion-focused traffic. This helped the home cleaning business generate 13 conversions from 208 clicks during a 7-day period.",
+    finalTakeaway: {
+      title: "Better Targeting. Better Traffic. More Conversion Opportunities.",
+      body: "For local service businesses, getting Google Ads traffic is only part of the equation. The campaign also needs to reach people who are actively looking for the service and minimize wasted spend on irrelevant searches. In this campaign, the focus was on improving that alignment, resulting in 13 conversions at a $33.68 cost per conversion in just 7 days.",
+    },
+    ctaHeadline: "Want Results Like This for Your Home Service Business?",
+    ctaBody:
+      "I can audit your Google Ads campaign, identify wasted spend, and show you opportunities to improve targeting, tracking, and conversion performance.",
+    ctaButtonLabel: "Get My Free Google Ads Audit",
   },
   {
     slug: "personal-injury-family-law",
