@@ -31,37 +31,42 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
   return (
     <>
       <section className="section pt-10 pb-0">
-        <div className="content-wrap px-6 max-w-[760px]">
-          <Link
-            href="/case-study/"
-            className="inline-flex items-center gap-1.5 caption-copy text-accent hover:underline mb-6"
-          >
-            <ArrowRightIcon className="w-3.5 h-3.5 rotate-180" />
-            Back to All Case Studies
-          </Link>
-        </div>
-      </section>
-
-      <section className="section pt-4 pb-8">
-        <div className="content-wrap px-6 max-w-[760px]">
-          <span className="caption-copy px-2.5 py-1 rounded-full bg-accent/10 text-accent w-fit inline-block mb-4">
-            {study.industry} · Case Study
-          </span>
-          <h1 className="h1-style mb-6">{study.headline}</h1>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
-              Get Results Like This
-              <ArrowRightIcon className="w-4 h-4" />
-            </Link>
-            <Link href="/case-study/" className="btn-secondary w-fit">
-              View All Studies
+        <div className="content-wrap px-6">
+          <div className="max-w-[760px] mx-auto">
+            <Link
+              href="/case-study/"
+              className="inline-flex items-center gap-1.5 caption-copy text-accent hover:underline mb-6"
+            >
+              <ArrowRightIcon className="w-3.5 h-3.5 rotate-180" />
+              Back to All Case Studies
             </Link>
           </div>
         </div>
       </section>
 
+      <section className="section pt-4 pb-8">
+        <div className="content-wrap px-6">
+          <div className="max-w-[760px] mx-auto">
+            <span className="caption-copy px-2.5 py-1 rounded-full bg-accent/10 text-accent w-fit inline-block mb-4">
+              {study.industry} · Case Study
+            </span>
+            <h1 className="h1-style mb-6">{study.headline}</h1>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/book-a-call/" className="btn-primary w-fit inline-flex items-center gap-2">
+                Get Results Like This
+                <ArrowRightIcon className="w-4 h-4" />
+              </Link>
+              <Link href="/case-study/" className="btn-secondary w-fit">
+                View All Studies
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section pt-0">
-        <div className="content-wrap px-6 max-w-[760px] flex flex-col gap-10">
+        <div className="content-wrap px-6">
+        <div className="max-w-[760px] mx-auto flex flex-col gap-10">
           <div>
             <p className="caption-copy uppercase tracking-wider text-neutral mb-3">
               Key Business Impact
@@ -134,24 +139,27 @@ export default function CaseStudyDetailPage({ params }: { params: { slug: string
 
           <BeforeAfterStrip />
         </div>
+        </div>
       </section>
 
       {otherStudies.length > 0 && (
         <section className="section pt-0">
-          <div className="content-wrap px-6 max-w-[760px]">
-            <p className="caption-copy uppercase tracking-wider text-neutral mb-4">
-              Explore More Results
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {otherStudies.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/case-study/${s.slug}/`}
-                  className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border text-ink hover:border-accent hover:text-accent transition-colors"
-                >
-                  {s.industry}
-                </Link>
-              ))}
+          <div className="content-wrap px-6">
+            <div className="max-w-[760px] mx-auto">
+              <p className="caption-copy uppercase tracking-wider text-neutral mb-4">
+                Explore More Results
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {otherStudies.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/case-study/${s.slug}/`}
+                    className="caption-copy px-3 py-1.5 rounded-full bg-white border border-border text-ink hover:border-accent hover:text-accent transition-colors"
+                  >
+                    {s.industry}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
